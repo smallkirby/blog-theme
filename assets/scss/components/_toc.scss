@@ -1,7 +1,6 @@
 .toc {
   display: none;
   @include respond-to('x-large') {
-    flex: 0 0 18em;
     align-self: start;
     order: 2;
     display: flex;
@@ -9,6 +8,8 @@
     align-items: start;
     height: calc(100vh - 90px);
     overflow-y: scroll;
+    min-width: 18em;
+    max-width: 24em;
   }
 }
 
@@ -23,6 +24,7 @@
 .toc-contents {
   display: none;
   text-align: left;
+  padding-left: 1.2rem;
   @include font-size('sm');
 
   &--active {
@@ -38,16 +40,23 @@
   }
 }
 
-#js-toc-toggle {
-  display: inline-flex;
-  align-items: center;
-  column-gap: 10px;
-  padding: 10px 20px;
-  background-color: var(--color-contrast-lower);
-  border-radius: 20px;
+#TableOfContents {
+  font-size: 1.2em;
+  line-height: 1.5;
+  ul {
+    list-style-type: none;
+    padding-left: 0.5rem;
 
-  &:hover {
-    cursor: pointer;
-    color: var(--color-primary);
+    li {
+      padding-left: 1rem;
+
+      a {
+        color: var(--color-text);
+        text-decoration: none;
+        &:hover {
+          color: var(--color-link);
+        }
+      }
+    }
   }
 }
