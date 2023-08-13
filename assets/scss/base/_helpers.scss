@@ -36,6 +36,11 @@
   }
 }
 
+.header-container {
+  @extend .container;
+  max-width: unset;
+}
+
 .content-container {
   display: flex;
   height: calc(100vh - 90px);
