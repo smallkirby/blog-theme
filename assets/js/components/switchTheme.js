@@ -26,10 +26,10 @@ function switchTheme() {
 
     function resetTheme() {
       if (themeSwitch.checked) {
-        document.body.setAttribute('data-theme', 'dark');
+        document.documentElement.setAttribute('data-theme', 'dark');
         localStorage.setItem('themeSwitch', 'dark');
       } else {
-        document.body.setAttribute('data-theme', 'light');
+        document.documentElement.setAttribute('data-theme', 'light');
         localStorage.setItem('themeSwitch', 'light');
       }
 

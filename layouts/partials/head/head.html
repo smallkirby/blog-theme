@@ -1,6 +1,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>
+    const theme = localStorage.getItem('themeSwitch');
+    if (theme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  </script>
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   {{ partial "head/resource-hints.html" . }} {{ partial "head/styles.html" . }}
   {{ partial "head/seo/seo.html" . }} {{ partial "head/favicons.html" . }} {{
