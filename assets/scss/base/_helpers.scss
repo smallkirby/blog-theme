@@ -38,7 +38,8 @@
 
 .content-container {
   display: flex;
-  height: calc(100vh - 70px);
+  height: calc(100vh - 90px);
+  padding-top: 20px;
 }
 
 .content-left-column {
@@ -123,5 +124,5 @@
 }
 
 .section {
-  padding: 20px 0;
+  padding: 0 0 20px 0;
 }

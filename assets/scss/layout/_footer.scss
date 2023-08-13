@@ -4,6 +4,7 @@
 
 .footer {
   background-color: var(--color-contrast-lower);
+  padding: 0.1px 0;
 }
 
 .footer-socials {
@@ -15,4 +16,5 @@
   text-align: center;
   @include font-size('base');
   color: var(--color-contrast-medium-high);
+  margin: 0.7rem;
 }
