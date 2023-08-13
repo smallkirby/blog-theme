@@ -8,6 +8,7 @@
     "drafts": "hugo server -D",
     "future": "hugo server -F",
     "expired": "hugo server -E",
+    "lint": "npm-run-all lint:js:nofix:*",
     "lint:fix": "npm-run-all lint:js:fix",
     "lint:js": "npm-run-all --parallel lint:js:nofix:*",
     "lint:js:fix": "npm-run-all lint:js:fix:*",

@@ -1,5 +1,7 @@
 # Blog Theme of Hugo
 
+![Build](https://github.com/smallkirby/blog-theme/actions/workflows/lint.yml/badge.svg)
+
 A blog theme of Hugo.
 This theme is forked from [hugo-liftoff](https://github.com/wjh18/hugo-liftoff).
 
