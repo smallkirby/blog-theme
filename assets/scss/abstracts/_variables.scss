@@ -88,6 +88,7 @@ $gv-dark-palette: (
   --color-text: var(--color-contrast-high);
   --color-link: #{lcolor(aqua1)};
   --color-highlight: #{lcolor(orange2)};
+  --color-bold: #{lcolor(purple1)};
 
   --font-size-sm: clamp(0.8rem, 0.17vw + 0.76rem, 0.89rem);
   --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
@@ -122,6 +123,7 @@ $gv-dark-palette: (
   --color-text: var(--color-contrast-high);
   --color-link: #{dcolor(aqua1)};
   --color-highlight: #{dcolor(purple1)};
+  --color-bold: #{dcolor(orange1)};
 }
 
 // Fonts

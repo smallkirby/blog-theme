@@ -1,8 +1,16 @@
 .markdown {
   @include font-size('base');
 
+  p {
+    font-size: 16px;
+  }
+
   p > img,
   figure > img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
     max-width: 100%;
     height: auto;
   }

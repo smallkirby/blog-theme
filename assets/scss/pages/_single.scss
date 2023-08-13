@@ -33,6 +33,14 @@
 
 .single-post-contents {
   width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+
+  strong {
+    padding: 0.5rem;
+    font-weight: 700;
+    color: var(--color-bold);
+  }
 }
 
 .series {
