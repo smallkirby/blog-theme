@@ -6,7 +6,7 @@
     order: 2;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
     height: calc(100vh - 90px);
     overflow-y: scroll;
   }
@@ -22,6 +22,7 @@
 
 .toc-contents {
   display: none;
+  text-align: left;
   @include font-size('sm');
 
   &--active {
