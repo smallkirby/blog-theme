@@ -20,7 +20,5 @@ project types:
 techstack:
 live_url: 
 source_url: 
-
-newsletter: true
 ---
 
