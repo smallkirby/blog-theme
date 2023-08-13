@@ -2,20 +2,88 @@
 // This file contains all application-wide Sass variables.
 // -----------------------------------------------------------------------------
 
+// gruvbox color scheme: https://github.com/morhetz/gruvbox
+$gv-light-palette: (
+  bg: #fbf1c7,
+  bg0h: #f9f5d7,
+  bg0: #fbf1c7,
+  bg1: #f2e5bc,
+  bg2: #ebdbb2,
+  bg3: #d5c4a1,
+  bg4: #bdae93,
+  gray: #928374,
+  fg0: #282828,
+  fg1: #3c3836,
+  fg2: #504945,
+  fg3: #665c54,
+  fg4: #7c6f64,
+  aqua1: #458588,
+  aqua2: #83a598,
+  orange1: #d65d0e,
+  orange2: #fe8019,
+  purple1: #b16286,
+  purple2: #d3869b,
+  blue1: #076678,
+  blue2: #458588,
+  red1: #cc241d,
+  red2: #fb4934,
+  yellow1: #d79921,
+  yellow2: #fabd2f,
+  green1: #98971a,
+  green2: #b8bb26,
+);
+$gv-dark-palette: (
+  bg: #282828,
+  bg0h: #1d2021,
+  bg0: #282828,
+  bg1: #3c3836,
+  bg2: #504945,
+  bg3: #665c54,
+  bg4: #7c6f64,
+  gray: #928374,
+  fg0: #fbf1c7,
+  fg1: #ebdbb2,
+  fg2: #d5c4a1,
+  fg3: #bdae93,
+  fg4: #a89984,
+  aqua1: #689d6a,
+  aqua2: #8ec07c,
+  orange1: #d65d0e,
+  orange2: #fe8019,
+  purple1: #b16286,
+  purple2: #d3869b,
+  blue1: #458588,
+  blue2: #83a598,
+  red1: #cc241d,
+  red2: #fb4934,
+  yellow1: #d79921,
+  yellow2: #fabd2f,
+  green1: #98971a,
+  green2: #b8bb26,
+);
+
+@function dcolor($color) {
+  @return map-get($gv-dark-palette, $color);
+}
+@function lcolor($color) {
+  @return map-get($gv-light-palette, $color);
+}
+
 :root,
-[data-theme='default'] {
-  --color-primary: rgb(18, 120, 175);
+[data-theme='light'] {
+  --color-primary: #{lcolor(aqua1)};
   --color-inline-code: hsl(0, 81%, 35%);
 
   /* color contrasts */
-  --color-bg: rgb(248, 248, 248);
-  --color-contrast-lower: hsl(0, 0%, 95%);
+  --color-bg: #{lcolor(bg0)};
+  --color-contrast-lower: #{lcolor(bg1)};
   --color-contrast-low: hsl(240, 1%, 83%);
   --color-contrast-medium-low: hsl(240, 1%, 65%);
   --color-contrast-medium: hsl(240, 1%, 48%);
   --color-contrast-medium-high: hsl(240, 2%, 34%);
-  --color-contrast-high: hsl(240, 4%, 20%);
+  --color-contrast-high: #{lcolor(fg0)};
   --color-contrast-higher: black;
+  --color-title: #{lcolor(orange1)};
 
   --color-text: var(--color-contrast-high);
 
@@ -34,18 +102,19 @@
 }
 
 [data-theme='dark'] {
-  --color-primary: rgb(86, 184, 237);
+  --color-primary: #{dcolor(aqua1)};
   --color-inline-code: hsl(0, 81%, 70%);
 
   /* color contrasts */
-  --color-bg: rgb(18, 18, 18);
-  --color-contrast-lower: hsl(240, 6%, 15%);
+  --color-bg: #{dcolor(bg0)};
+  --color-contrast-lower: #{dcolor(bg0h)};
   --color-contrast-low: hsl(252, 4%, 25%);
   --color-contrast-medium-low: hsl(240, 2%, 34%);
   --color-contrast-medium: hsl(240, 1%, 57%);
   --color-contrast-medium-high: hsl(240, 1%, 65%);
-  --color-contrast-high: hsl(0, 0%, 89%);
+  --color-contrast-high: #{dcolor(fg0)};
   --color-contrast-higher: white;
+  --color-title: #{dcolor(orange1)};
 
   --color-text: var(--color-contrast-high);
 }

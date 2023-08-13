@@ -25,6 +25,7 @@
   .hero-title {
     font-weight: 900;
     margin-top: 0;
+    color: var(--color-title);
     @include font-size('xl');
   }
 

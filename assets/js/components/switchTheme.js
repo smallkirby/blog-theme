@@ -29,7 +29,7 @@ function switchTheme() {
         document.body.setAttribute('data-theme', 'dark');
         localStorage.setItem('themeSwitch', 'dark');
       } else {
-        document.body.removeAttribute('data-theme');
+        document.body.setAttribute('data-theme', 'light');
         localStorage.setItem('themeSwitch', 'light');
       }
 
