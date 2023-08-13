@@ -32,9 +32,26 @@
   font-weight: 700;
   text-decoration: none;
   width: fit-content;
+  font-size: 1.2rem;
 
   &:hover {
     text-decoration: none;
+  }
+
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo-img {
+    width: 25px;
+    height: 25;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+
+  @include respond-to('m-large') {
+    font-size: 1.5rem;
   }
 }
 
