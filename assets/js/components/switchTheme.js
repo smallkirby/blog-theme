@@ -1,7 +1,7 @@
 // Adapted from https://github.com/CodyHouse/dark-light-mode-switch
 
 function switchTheme() {
-  let themeSwitch = document.getElementById('themeSwitch');
+  const themeSwitch = document.getElementById('themeSwitch');
   if (themeSwitch) {
     initTheme();
 
@@ -10,12 +10,14 @@ function switchTheme() {
     });
 
     function initTheme() {
-      let lsItem = localStorage.getItem('themeSwitch');
+      const lsItem = localStorage.getItem('themeSwitch');
       let darkThemeSelected = false;
       if (lsItem !== null) {
         darkThemeSelected = lsItem === 'dark';
       } else {
-        darkThemeSelected = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        darkThemeSelected = window.matchMedia(
+          '(prefers-color-scheme: dark)'
+        ).matches;
       }
 
       themeSwitch.checked = darkThemeSelected;
@@ -32,8 +34,8 @@ function switchTheme() {
       }
 
       // Reset Disqus to match new color scheme
-      if (typeof DISQUS !== "undefined") {
-          DISQUS.reset({ reload: true });
+      if (typeof DISQUS !== 'undefined') {
+        DISQUS.reset({ reload: true });
       }
     }
   }

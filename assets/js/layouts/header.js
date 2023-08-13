@@ -1,7 +1,7 @@
 // Show or hide nav on click of menu burger
 function toggleNav() {
-  let mainMenu = document.getElementById('js-menu');
-  let navBarToggle = document.getElementById('js-navbar-toggle');
+  const mainMenu = document.getElementById('js-menu');
+  const navBarToggle = document.getElementById('js-navbar-toggle');
 
   navBarToggle.addEventListener('click', () => {
     mainMenu.classList.toggle('menu--active');
@@ -11,11 +11,11 @@ function toggleNav() {
 
 // Show or hide menu items on mobile
 function toggleMobileMenu() {
-  let menuItems = document.querySelectorAll('.menu-item');
+  const menuItems = document.querySelectorAll('.menu-item');
 
-  menuItems.forEach(function(item) {
+  menuItems.forEach(function (item) {
     item.addEventListener('click', () => {
-      let subMenu = item.querySelector('.sub-menu');
+      const subMenu = item.querySelector('.sub-menu');
       if (subMenu.classList.contains('sub-menu--active')) {
         subMenu.classList.remove('sub-menu--active');
       } else {
@@ -28,8 +28,8 @@ function toggleMobileMenu() {
 
 // Collapse submenus
 function removeSubMenus() {
-  let subMenus = document.querySelectorAll('.sub-menu');
-  subMenus.forEach(function(sub) {
+  const subMenus = document.querySelectorAll('.sub-menu');
+  subMenus.forEach(function (sub) {
     if (sub.classList.contains('sub-menu--active')) {
       sub.classList.remove('sub-menu--active');
     }

@@ -1,6 +1,6 @@
 const toggleToc = (() => {
-  let tocToggle = document.getElementById('js-toc-toggle');
-  let tocContents = document.getElementById('js-toc-contents');
+  const tocToggle = document.getElementById('js-toc-toggle');
+  const tocContents = document.getElementById('js-toc-contents');
 
   if (tocToggle) {
     tocToggle.addEventListener('click', () => {

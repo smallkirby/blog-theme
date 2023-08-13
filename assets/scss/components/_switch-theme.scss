@@ -24,14 +24,14 @@
   right: 20px;
 
   @include respond-to('m-large') {
-    position:relative;
+    position: relative;
     top: unset;
     right: unset;
   }
-  
 }
 
-.switch-input, .switch-label {
+.switch-input,
+.switch-label {
   position: absolute;
   left: 0;
   top: 0;
@@ -74,9 +74,9 @@
   height: 100%;
   color: transparent;
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   background-color: hsl(240, 1%, 83%);
   background-color: var(--color-contrast-low);
   border-radius: inherit;
@@ -90,9 +90,9 @@
   background-color: hsl(0, 0%, 100%);
   background-color: var(--color-contrast-high);
   width: 20px;
-  width: calc(var(--switch-height) - var(--switch-padding)*2);
+  width: calc(var(--switch-height) - var(--switch-padding) * 2);
   height: 20px;
-  height: calc(var(--switch-height) - var(--switch-padding)*2);
+  height: calc(var(--switch-height) - var(--switch-padding) * 2);
   border-radius: 50%;
   z-index: 2;
   pointer-events: none;

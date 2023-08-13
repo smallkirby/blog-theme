@@ -4,7 +4,13 @@
     <!-- Twitter -->
     {{ with .Site.Params.social.links.twitter }}
     <li>
-      <a href="https://twitter.com/{{ . }}" target="_blank" rel="noopener" aria-label="Visit Twitter profile" class="social-btn twitter">
+      <a
+        href="https://twitter.com/{{ . }}"
+        target="_blank"
+        rel="noopener"
+        aria-label="Visit Twitter profile"
+        class="social-btn twitter"
+      >
         {{ partial "svg/twitter.svg" }}
       </a>
     </li>
@@ -13,7 +19,13 @@
     <!-- Mastodon -->
     {{ if .Site.Params.social.links.mastodon_user }}
     <li>
-      <a href="https://{{ with .Site.Params.social.links.mastodon_server }}{{ . }}{{ else }}mastodon.social{{ end }}/@{{ with .Site.Params.social.links.mastodon_user }}{{ . }}{{ end }}" target="_blank" rel="noopener" aria-label="Visit Mastodon profile" class="social-btn mastodon">
+      <a
+        href="https://{{ with .Site.Params.social.links.mastodon_server }}{{ . }}{{ else }}mastodon.social{{ end }}/@{{ with .Site.Params.social.links.mastodon_user }}{{ . }}{{ end }}"
+        target="_blank"
+        rel="noopener"
+        aria-label="Visit Mastodon profile"
+        class="social-btn mastodon"
+      >
         {{ partial "svg/mastodon.svg" }}
       </a>
     </li>
@@ -22,7 +34,13 @@
     <!-- Github -->
     {{ with .Site.Params.social.links.github }}
     <li>
-      <a href="https://github.com/{{ . }}" target="_blank" rel="noopener" aria-label="Visit Github profile" class="social-btn github">
+      <a
+        href="https://github.com/{{ . }}"
+        target="_blank"
+        rel="noopener"
+        aria-label="Visit Github profile"
+        class="social-btn github"
+      >
         {{ partial "svg/github.svg" }}
       </a>
     </li>
@@ -31,7 +49,13 @@
     <!-- Stack Overflow -->
     {{ with .Site.Params.social.links.stack_overflow }}
     <li>
-      <a href="https://stackoverflow.com/users/{{ . }}" target="_blank" rel="noopener" aria-label="Visit Stack Overflow profile" class="social-btn stack-overflow">
+      <a
+        href="https://stackoverflow.com/users/{{ . }}"
+        target="_blank"
+        rel="noopener"
+        aria-label="Visit Stack Overflow profile"
+        class="social-btn stack-overflow"
+      >
         {{ partial "svg/stack-overflow.svg" }}
       </a>
     </li>
@@ -40,9 +64,15 @@
     <!-- LinkedIn -->
     {{ with .Site.Params.social.links.linkedin }}
     <li>
-      <a href="https://www.linkedin.com/in/{{ . }}" target="_blank" rel="noopener" aria-label="Visit LinkedIn profile" class="social-btn linkedin">
+      <a
+        href="https://www.linkedin.com/in/{{ . }}"
+        target="_blank"
+        rel="noopener"
+        aria-label="Visit LinkedIn profile"
+        class="social-btn linkedin"
+      >
         {{ partial "svg/linkedin.svg" }}
-        </a>
+      </a>
     </li>
     {{ end }}
 

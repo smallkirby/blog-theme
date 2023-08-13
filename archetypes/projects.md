@@ -1,24 +1,23 @@
 ---
-title: {{ replace .Name "-" " " | title }}
-seo_title: {{ replace .Name "-" " " | title }}
-summary: 
-description: 
-slug: {{ .Name }}
-author: {{ .Site.Params.author }}
+title: { { replace .Name "-" " " | title } }
+seo_title: { { replace .Name "-" " " | title } }
+summary:
+description:
+slug: { { .Name } }
+author: { { .Site.Params.author } }
 
 draft: true
-date: {{ .Date }}
-lastmod: 
-expiryDate: 
-publishDate: 
+date: { { .Date } }
+lastmod:
+expiryDate:
+publishDate:
 
-feature_image: 
-feature_image_alt: 
+feature_image:
+feature_image_alt:
 
-project types: 
+project types:
 
 techstack:
-live_url: 
-source_url: 
+live_url:
+source_url:
 ---
-

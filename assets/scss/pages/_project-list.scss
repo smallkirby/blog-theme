@@ -12,7 +12,9 @@
 .project-entry {
   border: 1px solid var(--color-contrast-low);
   border-radius: 10px;
-  box-shadow: 0 0 20px -10px var(--color-contrast-low), 0 0 20px -10px var(--color-contrast-low);
+  box-shadow:
+    0 0 20px -10px var(--color-contrast-low),
+    0 0 20px -10px var(--color-contrast-low);
   max-width: 750px;
 }
 
@@ -60,7 +62,7 @@
 .project-entry-title {
   margin: 0;
   font-weight: 400;
-  
+
   a {
     color: var(--color-contrast-high);
 

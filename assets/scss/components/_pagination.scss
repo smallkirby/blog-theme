@@ -24,10 +24,9 @@
 }
 
 .page-item {
-  
   &.disabled > a {
     color: var(--color-contrast-low);
-    cursor:unset;
+    cursor: unset;
   }
 
   &.active > a {

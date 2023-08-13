@@ -1,9 +1,8 @@
 .toc {
-
   @include respond-to('x-large') {
     position: sticky;
-	  top: 2rem;
-	  align-self: start;
+    top: 2rem;
+    align-self: start;
     order: 2;
     display: flex;
     flex-direction: column;
@@ -13,7 +12,8 @@
   }
 }
 
-.toc-header, .toc-drop-icon {
+.toc-header,
+.toc-drop-icon {
   @include font-size('sm');
   font-weight: 500;
   margin: 0;
@@ -24,14 +24,14 @@
   display: none;
   @include font-size('sm');
 
-  &--active {      
+  &--active {
     display: block;
   }
 
   @include respond-to('x-large') {
     display: block;
 
-    &--active {      
+    &--active {
       display: none;
     }
   }
