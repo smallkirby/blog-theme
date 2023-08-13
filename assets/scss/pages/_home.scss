@@ -42,7 +42,7 @@
   row-gap: 20px;
 
   @include respond-to('medium') {
-    flex: 0 1 35%;
+    flex: 0 1 25%;
   }
 
   .hero-avatar {

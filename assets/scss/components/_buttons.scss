@@ -23,6 +23,8 @@
   @extend %btn;
   background-color: var(--color-primary);
   color: var(--color-contrast-lower);
+  border-radius: 0.25rem;
+  transition-duration: 200ms;
 
   &:hover {
     background: transparent;
