@@ -44,6 +44,7 @@
   font-size: 1.2em;
   line-height: 1.5;
   ul {
+    border-left: var(--color-contrast-medium-low) 1px solid;
     list-style-type: none;
     padding-left: 0.5rem;
 

@@ -77,11 +77,11 @@ $gv-dark-palette: (
   /* color contrasts */
   --color-bg: #{lcolor(bg0)};
   --color-contrast-lower: #{lcolor(bg1)};
-  --color-contrast-low: hsl(240, 1%, 83%);
-  --color-contrast-medium-low: hsl(240, 1%, 65%);
-  --color-contrast-medium: hsl(240, 1%, 48%);
-  --color-contrast-medium-high: hsl(240, 2%, 34%);
-  --color-contrast-high: #{lcolor(fg0)};
+  --color-contrast-low: #{lcolor(bg2)};
+  --color-contrast-medium-low: #{lcolor(bg3)};
+  --color-contrast-medium: #{lcolor(bg4)};
+  --color-contrast-medium-high: #{lcolor(fg4)};
+  --color-contrast-high: #{lcolor(fg3)};
   --color-contrast-higher: black;
   --color-title: #{lcolor(orange1)};
 
@@ -109,10 +109,10 @@ $gv-dark-palette: (
   /* color contrasts */
   --color-bg: #{dcolor(bg0)};
   --color-contrast-lower: #{dcolor(bg0h)};
-  --color-contrast-low: hsl(252, 4%, 25%);
-  --color-contrast-medium-low: hsl(240, 2%, 34%);
-  --color-contrast-medium: hsl(240, 1%, 57%);
-  --color-contrast-medium-high: hsl(240, 1%, 65%);
+  --color-contrast-low: #{dcolor(bg1)};
+  --color-contrast-medium-low: #{dcolor(bg2)};
+  --color-contrast-medium: #{dcolor(fg1)};
+  --color-contrast-medium-high: #{dcolor(fg2)};
   --color-contrast-high: #{dcolor(fg0)};
   --color-contrast-higher: white;
   --color-title: #{dcolor(orange1)};
