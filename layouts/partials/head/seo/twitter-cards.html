@@ -4,7 +4,7 @@
 {{ with .Site.Params.twitterCreator }}
   <meta name="twitter:creator" content="{{ . }}">
 {{ end }}
-<meta name="twitter:title" content="{{- with .Params.seo_title -}}{{- . -}}{{ else }}{{- .Title -}}{{ end }}{{ if (or (and (ne .Type "posts") (ne .Type "projects") (not .IsHome)) (and (not .IsPage) (not .IsHome))) }} | {{ .Site.Title -}}{{ end -}}">
+<meta name="twitter:title" content="{{- with .Params.seo_title -}}{{- . -}}{{ else }}{{- .Title -}}{{ end }}{{ if (or (and (ne .Type "posts") (not .IsHome)) (and (not .IsPage) (not .IsHome))) }} | {{ .Site.Title -}}{{ end -}}">
 <meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}">
 {{ $images := $.Resources.ByType "image" -}}
 {{ $feature := $images.GetMatch "*feature*" -}}
