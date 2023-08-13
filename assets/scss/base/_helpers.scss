@@ -50,7 +50,6 @@
 .content-left-column {
   @include respond-to('x-large') {
     flex: 0 0 300px;
-    margin-right: 30px;
   }
 }
 
