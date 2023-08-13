@@ -115,6 +115,7 @@ $gv-dark-palette: (
   --color-contrast-high: #{dcolor(fg0)};
   --color-contrast-higher: white;
   --color-title: #{dcolor(orange1)};
+  --color-scroll-thumb: #{dcolor(bg1)};
 
   --color-text: var(--color-contrast-high);
 }
