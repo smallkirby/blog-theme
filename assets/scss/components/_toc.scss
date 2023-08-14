@@ -8,10 +8,11 @@
     display: flex;
     flex-direction: column;
     align-items: start;
-    height: calc(100vh - 90px);
     overflow-y: scroll;
     min-width: 18em;
     max-width: 24em;
+    height: 98vh;
+    margin-right: 1rem;
   }
 }
 
