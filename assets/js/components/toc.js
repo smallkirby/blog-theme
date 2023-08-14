@@ -26,15 +26,43 @@ const highlightToc = (() => {
     }
   };
 
+  // Highlight correct TOC entry on page load
   document.addEventListener('scroll', () => {
     const currentScroll = -1 * document.body.getBoundingClientRect().top;
     const currentTocIndex = allTocYs.findIndex((y) => y > currentScroll) - 1;
     highlightTocEntry(currentTocIndex);
   });
-
   if (allTocYs.length > 0) {
     highlightTocEntry(0);
   }
+
+  const tocWindows = document.getElementsByClassName('toc');
+  if (tocWindows.length === 0) {
+    return;
+  }
+  const tocWindow = tocWindows[0];
+
+  // Scroll TOC to the current highlighted entry
+  document.addEventListener('scroll', () => {
+    const currentToc = document.querySelector('.toc-link--active');
+    if (currentToc) {
+      // Check if `currentToc` is in the visible part of the TOC
+      const tocTop = currentToc.offsetTop;
+      const tocBottom = tocTop + currentToc.offsetHeight;
+      const tocWindowTop = tocWindow.scrollTop;
+      const tocWindowBottom = tocWindowTop + tocWindow.offsetHeight;
+      if (tocTop < tocWindowTop) {
+        console.log('tocTop < tocWindowTop');
+        // Scroll up
+        tocWindow.scrollTop = tocTop;
+      }
+      if (tocBottom > tocWindowBottom) {
+        console.log('tocBottom > tocWindowBottom');
+        // Scroll down
+        tocWindow.scrollTop = tocBottom - tocWindow.offsetHeight;
+      }
+    }
+  });
 })();
 
 export { highlightToc };
