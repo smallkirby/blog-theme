@@ -3,14 +3,15 @@
  */
 const highlightToc = (() => {
   const tocContents = document.getElementById('js-toc-contents');
+  if (!tocContents) {
+    return;
+  }
   const allTocHrefs = tocContents.querySelectorAll('a[href^="#"]');
   const allTocYs = [];
   allTocHrefs.forEach((tocHref) => {
     const y = document.querySelector(tocHref.getAttribute('href')).offsetTop;
     allTocYs.push(y);
   });
-  const contentDiv = document.getElementById('content-div');
-  const baseOffsetY = contentDiv.offsetTop;
 
   const highlightTocEntry = (tocIndex) => {
     allTocHrefs.forEach((tocHref) => {
@@ -25,15 +26,39 @@ const highlightToc = (() => {
     }
   };
 
-  contentDiv.addEventListener('scroll', () => {
-    const currentScroll = contentDiv.scrollTop + baseOffsetY;
+  // Highlight correct TOC entry on page load
+  document.addEventListener('scroll', () => {
+    const currentScroll = -1 * document.body.getBoundingClientRect().top;
     const currentTocIndex = allTocYs.findIndex((y) => y > currentScroll) - 1;
     highlightTocEntry(currentTocIndex);
   });
-
   if (allTocYs.length > 0) {
     highlightTocEntry(0);
   }
+
+  const tocWindows = document.getElementsByClassName('toc');
+  if (tocWindows.length === 0) {
+    return;
+  }
+  const tocWindow = tocWindows[0];
+
+  // Scroll TOC to the current highlighted entry
+  document.addEventListener('scroll', () => {
+    const currentToc = document.querySelector('.toc-link--active');
+    if (currentToc) {
+      // Check if `currentToc` is in the visible part of the TOC
+      const tocTop = currentToc.offsetTop;
+      const tocBottom = tocTop + currentToc.offsetHeight;
+      const tocWindowTop = tocWindow.scrollTop;
+      const tocWindowBottom = tocWindowTop + tocWindow.offsetHeight;
+      if (tocTop < tocWindowTop) {
+        tocWindow.scrollTop = tocTop;
+      }
+      if (tocBottom > tocWindowBottom) {
+        tocWindow.scrollTop = tocBottom - tocWindow.offsetHeight;
+      }
+    }
+  });
 })();
 
 export { highlightToc };
