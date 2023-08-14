@@ -2,13 +2,22 @@
   position: relative;
   padding: 6px 15px;
   border-radius: 5px;
-  background-color: #272822;
+  background-color: var(--code-bg);
   color: #7f7f7f;
   z-index: 1000;
   top: 25px;
-  @include font-size('base');
+  @include font-size('sm');
 }
 
 .highlight > pre {
   padding: 20px;
+  font-size: 0.9rem;
+}
+
+.highlight {
+  .ln {
+    border-right: 1px solid var(--color-contrast-medium-low);
+    padding-right: 1rem !important;
+    margin-right: 1rem !important;
+  }
 }

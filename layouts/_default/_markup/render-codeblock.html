@@ -1,5 +1,4 @@
-{{ $lang := .Attributes.lang | default .Type }} {{ if transform.CanHighlight
-$lang }} <span class="code-language">{{ $lang }}</span>{{ highlight .Inner $lang
-}} {{ else }}
-<pre><code>{{ .Inner }}</code></pre>
-{{ end }}
+{{ $lang := .Attributes.lang | default .Type }}
+<span class="code-language">{{ $lang }}</span>
+{{ if not (strings.Contains $lang ".") }} {{ $lang = printf "%s.txt" $lang }} {{
+end }} {{ highlight .Inner $lang }}
