@@ -6,9 +6,10 @@
   color: #7f7f7f;
   z-index: 1000;
   top: 25px;
-  @include font-size('base');
+  @include font-size('sm');
 }
 
 .highlight > pre {
-  padding: 20px;
+  padding: 10px;
+  font-size: 0.9rem;
 }
