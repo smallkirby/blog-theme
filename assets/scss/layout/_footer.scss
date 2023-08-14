@@ -4,7 +4,7 @@
 
 .footer {
   background-color: var(--color-contrast-lower);
-  padding: 0.1px 0;
+  padding: 20px 0;
 }
 
 .footer-socials {
@@ -14,7 +14,21 @@
 
 .footer-copyright {
   text-align: center;
-  @include font-size('base');
+  line-height: 0.1;
+  padding: 0;
+  @include font-size('sm');
   color: var(--color-contrast-medium-high);
-  margin: 0.7rem;
+}
+
+.hide-mobile {
+  display: none;
+  @include respond-to('medium') {
+    display: inline;
+  }
+}
+
+.hide-non-mobile {
+  @include respond-to('medium') {
+    display: none;
+  }
 }
