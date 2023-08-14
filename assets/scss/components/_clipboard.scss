@@ -6,9 +6,9 @@
   right: 0;
   padding: 2px 7px 5px 7px;
   margin: 5px;
-  color: #767676;
-  border-color: #767676;
-  background-color: #ededed;
+  color: var(--color-contrast-low);
+  border-color: var(--color-contrast-low);
+  background-color: var(--color-contrast-high);
   border: 1px solid;
   border-radius: 6px;
   z-index: 1;
@@ -17,13 +17,13 @@
 }
 
 .clipboard-button > svg {
-  fill: #767676;
+  fill: var(--color-contrast-low);
 }
 
 .clipboard-button:hover {
   cursor: pointer;
   border-color: #696969;
-  background-color: #e0e0e0;
+  background-color: var(--color-contrast-medium-low);
 }
 
 .clipboard-button:hover > svg {
