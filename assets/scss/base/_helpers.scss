@@ -46,6 +46,8 @@
   justify-content: end;
   padding-top: 20px;
   width: 100%;
+  max-width: calc(1000px + 24em);
+  margin: 0 auto;
 }
 
 .content-left-column {
