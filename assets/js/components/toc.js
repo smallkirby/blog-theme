@@ -3,14 +3,15 @@
  */
 const highlightToc = (() => {
   const tocContents = document.getElementById('js-toc-contents');
+  if (!tocContents) {
+    return;
+  }
   const allTocHrefs = tocContents.querySelectorAll('a[href^="#"]');
   const allTocYs = [];
   allTocHrefs.forEach((tocHref) => {
     const y = document.querySelector(tocHref.getAttribute('href')).offsetTop;
     allTocYs.push(y);
   });
-  const contentDiv = document.getElementById('content-div');
-  const baseOffsetY = contentDiv.offsetTop;
 
   const highlightTocEntry = (tocIndex) => {
     allTocHrefs.forEach((tocHref) => {
@@ -25,8 +26,8 @@ const highlightToc = (() => {
     }
   };
 
-  contentDiv.addEventListener('scroll', () => {
-    const currentScroll = contentDiv.scrollTop + baseOffsetY;
+  document.addEventListener('scroll', () => {
+    const currentScroll = -1 * document.body.getBoundingClientRect().top;
     const currentTocIndex = allTocYs.findIndex((y) => y > currentScroll) - 1;
     highlightTocEntry(currentTocIndex);
   });
