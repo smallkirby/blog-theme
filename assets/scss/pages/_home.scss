@@ -26,6 +26,11 @@
   }
 
   .hero-title {
+    display: none;
+
+    @include respond-to('medium') {
+      display: block;
+    }
     font-weight: 900;
     margin-top: 0;
     color: var(--color-title);
