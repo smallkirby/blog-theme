@@ -1,7 +1,7 @@
 <div class="post-list-dates">
   {{- if not (eq .Lastmod .Date) -}} Posted: {{ end -}} {{- if not
-  .PublishDate.IsZero -}} {{- .PublishDate.Format "Jan 2, 2006" -}} {{- else -}}
-  {{ .Date.Format "Jan 2, 2006" -}} {{- end -}} {{- if not (eq .Lastmod .Date)
-  -}} &nbsp;&middot;&nbsp; Updated: {{ .Lastmod.Format "Jan 2, 2006" -}} {{- end
+  .PublishDate.IsZero -}} {{- .PublishDate.Format "2006.01.02" -}} {{- else -}}
+  {{ .Date.Format "2006.01.02" -}} {{- end -}} {{- if not (eq .Lastmod .Date)
+  -}} &nbsp;&middot;&nbsp; Updated: {{ .Lastmod.Format "2006.01.02" -}} {{- end
   -}} &nbsp;&middot;&nbsp; {{- .ReadingTime }} min.
 </div>
