@@ -8,7 +8,7 @@
     </a>
 
     <ul class="menu" id="js-menu">
-      <li class="menu-item--align">
+      <li class="menu-item menu-item--search">
         {{ partial "general/search-box.html" . }}
       </li>
       {{ $currentPage := . }} {{ range .Site.Menus.main }} {{ if .HasChildren }}

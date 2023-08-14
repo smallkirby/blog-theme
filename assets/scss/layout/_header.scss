@@ -6,12 +6,12 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 15px 0;
+  padding: 20px 0;
   row-gap: 20px;
 
   .nav-toggle {
     position: absolute;
-    top: 17px;
+    top: 21px;
     right: 15px;
     cursor: pointer;
   }
@@ -69,8 +69,13 @@
   flex-direction: column;
   margin: 0;
   padding: 0;
+  padding-top: 10px;
   border-bottom: 1px solid var(--color-contrast-low);
   border-top: 1px solid var(--color-contrast-low);
+
+  @include respond-to('m-large') {
+    padding: 0;
+  }
 
   &--active {
     display: flex; /* Display mobile menu on click */
@@ -85,6 +90,12 @@
     @extend .menu-item;
     align-self: center;
     margin-left: 20px;
+  }
+
+  .menu-item--search {
+    @extend .menu-item;
+    align-self: left;
+    width: 70%;
   }
 
   .menu-link {
