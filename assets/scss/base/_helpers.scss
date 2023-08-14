@@ -39,6 +39,8 @@
 .header-container {
   @extend .container;
   max-width: unset;
+  background: var(--color-bg);
+  z-index: 999;
 }
 
 .content-container {
