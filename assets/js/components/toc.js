@@ -52,13 +52,9 @@ const highlightToc = (() => {
       const tocWindowTop = tocWindow.scrollTop;
       const tocWindowBottom = tocWindowTop + tocWindow.offsetHeight;
       if (tocTop < tocWindowTop) {
-        console.log('tocTop < tocWindowTop');
-        // Scroll up
         tocWindow.scrollTop = tocTop;
       }
       if (tocBottom > tocWindowBottom) {
-        console.log('tocBottom > tocWindowBottom');
-        // Scroll down
         tocWindow.scrollTop = tocBottom - tocWindow.offsetHeight;
       }
     }
