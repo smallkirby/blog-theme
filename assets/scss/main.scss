@@ -21,3 +21,6 @@
 // 6. Page-specific styles
 @import 'pages/home', 'pages/contact', 'pages/single', 'pages/terms',
   'pages/errors', 'pages/post-list';
+
+// 7. Chroma Code styles
+@import 'components/code_gruvbox', 'components/code_gruvbox-light';
