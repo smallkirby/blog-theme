@@ -65,6 +65,10 @@ const offlineSearch = (() => {
       }
 
       function startSearch(term) {
+        document.getElementById('search-result-string').style.display = 'none';
+        document.getElementById('search-loading-string').style.display =
+          'block';
+
         if (index) {
           // Index already present, search directly.
           search(term);
@@ -79,6 +83,8 @@ const offlineSearch = (() => {
       }
 
       function searchDone() {
+        document.getElementById('search-result-string').style.display = 'block';
+        document.getElementById('search-loading-string').style.display = 'none';
         queuedTerm = null;
       }
 

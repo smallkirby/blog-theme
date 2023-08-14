@@ -54,3 +54,7 @@ input[type='search']::-webkit-search-results-decoration {
 .search-input:focus {
   width: 10em;
 }
+
+#search-result-string {
+  display: none;
+}
