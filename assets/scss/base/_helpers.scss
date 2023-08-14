@@ -60,6 +60,7 @@
   padding-right: 16px; /* 3 */
   width: 100%; /* 1 */
   height: 100%;
+  max-width: 1000px;
   overflow-y: scroll;
 
   @include respond-to("small") {
