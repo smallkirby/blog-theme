@@ -43,8 +43,9 @@
 
 .content-container {
   display: flex;
-  height: calc(100vh - 90px);
+  justify-content: end;
   padding-top: 20px;
+  width: 100%;
 }
 
 .content-left-column {

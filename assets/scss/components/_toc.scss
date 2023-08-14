@@ -1,4 +1,6 @@
 .toc {
+  position: sticky;
+  top: 0;
   display: none;
   @include respond-to('x-large') {
     align-self: start;
