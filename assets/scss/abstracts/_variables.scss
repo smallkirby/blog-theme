@@ -75,13 +75,13 @@ $gv-dark-palette: (
   --color-inline-code: hsl(0, 81%, 35%);
 
   /* color contrasts */
-  --color-bg: #{lcolor(bg0)};
+  --color-bg: #{lcolor(bg0h)};
   --color-contrast-lower: #{lcolor(bg1)};
   --color-contrast-low: #{lcolor(bg2)};
   --color-contrast-medium-low: #{lcolor(bg3)};
-  --color-contrast-medium: #{lcolor(bg4)};
-  --color-contrast-medium-high: #{lcolor(fg4)};
-  --color-contrast-high: #{lcolor(fg3)};
+  --color-contrast-medium: #{lcolor(fg1)};
+  --color-contrast-medium-high: #{lcolor(fg0)};
+  --color-contrast-high: #{lcolor(fg0)};
   --color-contrast-higher: black;
   --color-title: #{lcolor(orange1)};
   --color-scroll-thumb: #{lcolor(bg3)};
