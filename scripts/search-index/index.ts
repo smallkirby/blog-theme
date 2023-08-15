@@ -1,6 +1,9 @@
 import path from 'path';
 import fs from 'fs';
 import MarkdownIt from 'markdown-it';
+import Token from 'markdown-it/lib/token';
+
+const ALGOLIA_MAX_SIZE = 10000;
 
 type SearchIndexEntry = {
   objectID: string;
@@ -14,6 +17,36 @@ type SearchIndexEntry = {
   filepath: string;
 };
 
+const splitCodeBlock = (raw: string, codeblock: Token): Token[] => {
+  const tokens: Token[] = [];
+  const remainingLines = raw
+    .split('\n')
+    .slice(codeblock.map![0], codeblock.map![1]);
+  let currentLineNum = codeblock.map![0];
+  while (remainingLines.length > 0) {
+    const startLineNum = currentLineNum;
+    const lines: string[] = [];
+    let currentSize = 0;
+    while (remainingLines.length > 0) {
+      const line = remainingLines.shift()!;
+      lines.push(line);
+      currentSize += line.length;
+      ++currentLineNum;
+      if (currentSize >= ALGOLIA_MAX_SIZE) {
+        lines.pop();
+        remainingLines.unshift(line);
+        --currentLineNum;
+        break;
+      }
+    }
+    const token = new Token('fence', 'code', 0);
+    token.map = [startLineNum, currentLineNum];
+    tokens.push(token);
+  }
+
+  return tokens;
+};
+
 const _generateIndexEntryParagraph = (
   paragraph: string,
   entry: SearchIndexEntry
@@ -22,7 +55,10 @@ const _generateIndexEntryParagraph = (
   const md = MarkdownIt().parse(paragraph, {});
 
   // Codeblocks
-  const codeblocks = md.filter((token) => token.type === 'fence');
+  let codeblocks = md.filter((token) => token.type === 'fence');
+  codeblocks = codeblocks
+    .map((codeblock) => splitCodeBlock(paragraph, codeblock))
+    .flat();
   codeblocks.forEach((codeblock) => {
     const [startLine, endLine] = codeblock.map!;
     rangesToRemove.push([startLine, endLine]);
