@@ -49,7 +49,8 @@ const splitCodeBlock = (raw: string, codeblock: Token): Token[] => {
 
 const _generateIndexEntryParagraph = (
   paragraph: string,
-  entry: SearchIndexEntry
+  entry: SearchIndexEntry,
+  index: number
 ): SearchIndexEntry[] => {
   const rangesToRemove: number[][] = [];
   const md = MarkdownIt().parse(paragraph, {});
@@ -87,7 +88,7 @@ const _generateIndexEntryParagraph = (
   // Generate paragraph entry
   const paragraphEntry: SearchIndexEntry = {
     ...entry,
-    objectID: `${entry.objectID}-paragraph`,
+    objectID: `${entry.objectID}-paragraph-${index}`,
     content: lines.join('\n'),
   };
 
@@ -116,7 +117,7 @@ const generateIndexEntry = (
     .map((range) => {
       const [startLine, endLine] = range;
       const paragraph = lines.slice(startLine, endLine).join('\n');
-      return _generateIndexEntryParagraph(paragraph, entry);
+      return _generateIndexEntryParagraph(paragraph, entry, startLine);
     })
     .flat();
 };
