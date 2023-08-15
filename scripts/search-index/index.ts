@@ -32,7 +32,7 @@ const splitCodeBlock = (raw: string, codeblock: Token): Token[] => {
       lines.push(line);
       currentSize += line.length;
       ++currentLineNum;
-      if (currentSize >= ALGOLIA_MAX_SIZE * 0.9) {
+      if (currentSize >= ALGOLIA_MAX_SIZE * 0.7) {
         lines.pop();
         remainingLines.unshift(line);
         --currentLineNum;
