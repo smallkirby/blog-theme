@@ -115,5 +115,5 @@ const indexEntries = files
 /**
  * Output to the index file
  */
-const indexFile = path.join(basePath, 'public/searc-split.json');
+const indexFile = path.join(basePath, 'public/search-split.json');
 fs.writeFileSync(indexFile, JSON.stringify(indexEntries, null, 0));
