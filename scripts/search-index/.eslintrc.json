@@ -1,7 +1,14 @@
 {
-  "plugins": ["prettier", "@typescript-eslint"],
+  "plugins": ["html", "prettier", "@typescript-eslint"],
   "extends": ["google"],
+  "env": {
+    "es6": true
+  },
   "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 13
+  },
   "rules": {
     "indent": ["error", 2],
     "no-tabs": "off",
@@ -33,6 +40,7 @@
     "object-curly-spacing": ["error", "always"],
     "no-undef": "off",
     "new-cap": "off",
-    "space-before-function-paren": "off"
+    "space-before-function-paren": "off",
+    "comma-dangle": "off"
   }
 }
