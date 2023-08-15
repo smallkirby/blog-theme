@@ -32,7 +32,7 @@ const splitCodeBlock = (raw: string, codeblock: Token): Token[] => {
       lines.push(line);
       currentSize += line.length;
       ++currentLineNum;
-      if (currentSize >= ALGOLIA_MAX_SIZE) {
+      if (currentSize >= ALGOLIA_MAX_SIZE * 0.9) {
         lines.pop();
         remainingLines.unshift(line);
         --currentLineNum;
@@ -147,6 +147,18 @@ const indexEntries = files
     return generateIndexEntry(filepath, entry);
   })
   .flat();
+
+/**
+ * Check if each entry has a smaller size than the max size.
+ */
+indexEntries.forEach((entry) => {
+  if (entry.content.length >= ALGOLIA_MAX_SIZE) {
+    throw new Error(
+      // eslint-disable-next-line max-len
+      `Entry ${entry.objectID} has a size of ${entry.content.length} which is larger than the max size of ${ALGOLIA_MAX_SIZE}`
+    );
+  }
+});
 
 /**
  * Output to the index file
