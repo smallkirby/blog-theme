@@ -1,13 +1,7 @@
 {
-  "plugins": ["html", "prettier"],
+  "plugins": ["prettier", "@typescript-eslint"],
   "extends": ["google"],
-  "env": {
-    "es6": true
-  },
-  "parserOptions": {
-    "sourceType": "module",
-    "ecmaVersion": 13
-  },
+  "parser": "@typescript-eslint/parser",
   "rules": {
     "indent": ["error", 2],
     "no-tabs": "off",
