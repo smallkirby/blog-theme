@@ -50,4 +50,11 @@
   h6 a {
     text-decoration: none;
   }
+
+  hr {
+    border: 0;
+    height: 1px;
+    background-color: var(--color-contrast-medium-low);
+    margin: 1.5rem 0;
+  }
 }

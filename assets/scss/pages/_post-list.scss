@@ -29,6 +29,7 @@
 
 .post-list-summary {
   @extend .summary-text;
+  @include font-size('base');
   margin: 10px 0 0 0;
 }
 
