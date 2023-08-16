@@ -202,4 +202,4 @@ const offlineSearch = (() => {
   );
 })();
 
-export { offlineSearch as search };
+export { offlineSearch };

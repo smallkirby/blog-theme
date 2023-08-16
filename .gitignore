@@ -23,3 +23,5 @@ hugo.linux
 
 ### Editor
 *.code-workspace
+
+assets/js/components/bundle/**

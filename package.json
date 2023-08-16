@@ -3,7 +3,8 @@
   "name": "hugo-liftoff",
   "version": "",
   "scripts": {
-    "build": "npm run hugo && npm run index",
+    "bundle": "webpack --mode production",
+    "build": "npm run bundle && npm run hugo && npm run index",
     "hugo": "hugo",
     "index": "ts-node scripts/search-index/index.ts",
     "dev": "hugo server",
@@ -21,7 +22,9 @@
   },
   "dependencies": {
     "@types/markdown-it": "^13.0.0",
+    "algoliasearch": "^4.19.1",
     "autoprefixer": "^10.4.14",
+    "js-base64": "^3.7.5",
     "markdown-it": "^13.0.1",
     "postcss": "^8.4.25",
     "postcss-cli": "^10.1.0",
@@ -41,6 +44,8 @@
     "eslint-plugin-html": "^7.1.0",
     "eslint-plugin-prettier": "^5.0.0",
     "npm-run-all": "^4.1.5",
-    "prettier": "^3.0.1"
+    "prettier": "^3.0.1",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
   }
 }
