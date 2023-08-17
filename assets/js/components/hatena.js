@@ -44,3 +44,13 @@ const fetchHatenaStars = (uri) => {
     );
   });
 };
+
+// eslint-disable-next-line no-unused-vars
+const addHatenaStar = (uri) => {
+  window
+    .open(
+      'https://s.hatena.ne.jp/star.add?uri=' + encodeURIComponent(uri),
+      '_blank'
+    )
+    ?.focus();
+};

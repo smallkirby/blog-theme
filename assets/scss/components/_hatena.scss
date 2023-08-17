@@ -1,9 +1,11 @@
 .hatena {
   display: flex;
+  align-items: center;
   width: 100%;
 
   .hatena-bookmark {
     margin-right: 1rem;
+    margin-top: 0.4rem;
   }
 
   .hatena-star-area {

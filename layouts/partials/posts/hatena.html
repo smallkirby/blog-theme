@@ -35,6 +35,7 @@ printf "%s" .Permalink }} {{ $body := print $title ", by " .Site.Title "\n"
       <img
         src="https://cdn.blog.st-hatena.com/images/theme/star/hatena-star-add-button.svg"
         alt="Add Hatena Star"
+        onclick="addHatenaStar('{{ $url }}')"
       />
     </div>
     <div class="hatena-stars" id="hatena-stars"></div>
