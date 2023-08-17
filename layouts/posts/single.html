@@ -67,6 +67,7 @@
               {{ end }}
             {{ end }}
           </div>
+          {{ partial "posts/hatena-bookmark.html" . }}
           {{ partial "posts/social-share.html" . }}
           {{- if .Params.series }}
             <div class="series">
