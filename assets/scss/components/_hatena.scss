@@ -1,0 +1,25 @@
+.hatena {
+  display: flex;
+  width: 100%;
+
+  .hatena-bookmark {
+    margin-right: 1rem;
+  }
+
+  .hatena-star-area {
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    img {
+      cursor: pointer;
+      display: block;
+      margin-right: 0.5rem;
+    }
+
+    .hatena-star {
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+  }
+}

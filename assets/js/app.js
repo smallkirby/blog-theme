@@ -4,6 +4,7 @@ import {
   clipboard,
   highlightToc,
   algoliaSearch,
+  hatena,
 } from './components/components';
 // eslint-disable-next-line no-unused-vars
 import { header } from './layouts/header';
