@@ -3,7 +3,9 @@
   <div class="content-center-column" id="content-div">
     <section class="page-header">
       <h1 class="page-header-title" id="post-title">
-        {{- .Title -}}
+        <a href="{{ .Permalink }}">
+          {{- .Title -}}
+        </a>
       </h1>
       <div class="post-list-meta">
         {{ partial "posts/post-meta.html" . }}

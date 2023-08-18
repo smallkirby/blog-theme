@@ -26,18 +26,19 @@ printf "%s" .Permalink }} {{ $body := print $title ", by " .Site.Title "\n"
     ></script>
   </div>
   <div class="hatena-star-area" id="hatena-star">
-    {{ $hatenajs := resources.Get "js/components/hatena.js" }}
-    <script src="{{ $hatenajs.Permalink }}"></script>
-    <script>
-      fetchHatenaStars('{{ $url }}');
-    </script>
-    <div>
-      <img
-        src="https://cdn.blog.st-hatena.com/images/theme/star/hatena-star-add-button.svg"
-        alt="Add Hatena Star"
-        onclick="addHatenaStar('{{ $url }}')"
-      />
+    <script type="text/javascript" src="https://s.hatena.ne.jp/js/HatenaStar.js"></script>
+    <div id="hatena-stars">
     </div>
-    <div class="hatena-stars" id="hatena-stars"></div>
+    <script type="text/javascript">
+      Hatena.Star.SiteConfig = {
+        entryNodes: {
+          'section#post-container': {
+            uri: 'h1#post-title a',
+            title: 'h3#post-title',
+            container: 'div#hatena-stars'
+          }
+        }
+      };
+    </script>
   </div>
 </div>
