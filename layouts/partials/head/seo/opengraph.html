@@ -43,7 +43,7 @@
     <meta property="og:image:alt" content="{{ . }}" />
   {{ end }}
 {{ else if $.Params.images }}
-  <meta name="og:image" content="{{ index $.Params.images 0 | absURL }}"/>
+  <meta name="og:image" content="{{ path.Join $.Permalink (index $.Params.images 0) | absURL }}"/>
 {{ else if $.Site.Params.images }}
   <meta name="og:image" content="{{ index $.Site.Params.images 0 | absURL }}"/>
 {{ end }}
