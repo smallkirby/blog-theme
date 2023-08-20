@@ -24,7 +24,7 @@
     {{ end }}
 {{ else if $.Params.images }}
   <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:image" content="{{ index $.Params.images 0 | absURL }}"/>
+  <meta name="twitter:image" content="{{ path.Join $.Permalink (index $.Params.images 0) | absURL }}"/>
 {{ else if $.Site.Params.images }}
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:image" content="{{ index $.Site.Params.images 0 | absURL }}"/>
