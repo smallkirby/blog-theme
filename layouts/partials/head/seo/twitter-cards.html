@@ -1,8 +1,8 @@
 {{ with .Site.Params.twitterSite }}
-  <meta name="twitter:site" content="{{ . }}">
+  <meta name="twitter:site" content="@{{ . }}">
 {{ end }}
 {{ with .Site.Params.twitterCreator }}
-  <meta name="twitter:creator" content="{{ . }}">
+  <meta name="twitter:creator" content="@{{ . }}">
 {{ end }}
 <meta name="twitter:title" content="{{- with .Params.seo_title -}}{{- . -}}{{ else }}{{- .Title -}}{{ end }}{{ if (or (and (ne .Type "posts") (not .IsHome)) (and (not .IsPage) (not .IsHome))) }} | {{ .Site.Title -}}{{ end -}}">
 <meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}">
