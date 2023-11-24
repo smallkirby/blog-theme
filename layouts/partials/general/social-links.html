@@ -2,6 +2,21 @@
 <div class="social-links">
   <ul class="social-icons">
     <!-- Twitter -->
+    {{ with .Site.Params.social.links.homepage }}
+    <li>
+      <a
+        href="{{ . }}"
+        target="_blank"
+        rel="noopener"
+        aria-label="Visit Homepage"
+        class="social-btn homepage"
+      >
+        {{ partial "svg/home.svg" }}
+      </a>
+    </li>
+    {{ end }}
+
+    <!-- Twitter -->
     {{ with .Site.Params.social.links.twitter }}
     <li>
       <a
@@ -85,6 +100,7 @@
     </li>
     {{ end }}
 
+    <!-- RSS -->
     <li>
       <a
         href="index.xml"
