@@ -9,8 +9,10 @@ const highlightToc = (() => {
   const allTocHrefs = tocContents.querySelectorAll('a[href^="#"]');
   const allTocYs = [];
   allTocHrefs.forEach((tocHref) => {
-    const y = document.querySelector(tocHref.getAttribute('href')).offsetTop;
-    allTocYs.push(y);
+    const y = document.getElementById(tocHref.getAttribute('href').slice(1))?.offsetTop;
+    if (y) {
+      allTocYs.push(y);
+    }
   });
 
   const highlightTocEntry = (tocIndex) => {
