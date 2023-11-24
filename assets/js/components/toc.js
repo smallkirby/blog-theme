@@ -9,7 +9,9 @@ const highlightToc = (() => {
   const allTocHrefs = tocContents.querySelectorAll('a[href^="#"]');
   const allTocYs = [];
   allTocHrefs.forEach((tocHref) => {
-    const y = document.getElementById(tocHref.getAttribute('href').slice(1))?.offsetTop;
+    const y = document.getElementById(
+      tocHref.getAttribute('href').slice(1)
+    )?.offsetTop;
     if (y) {
       allTocYs.push(y);
     }

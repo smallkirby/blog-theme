@@ -4,3 +4,5 @@ resources/**
 **/vendor/**
 **/index.searchindex.json
 **/bundle/**
+
+/public
