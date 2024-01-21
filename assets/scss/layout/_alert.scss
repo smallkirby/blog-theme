@@ -1,14 +1,30 @@
+$warning: #d65d0e;
+$info: #458588;
+
 .alert {
   padding-top: 0.3rem;
-  padding-bottom: 0.5rem;
+  padding-bottom: 1rem;
   padding-left: 1.5rem;
   margin-left: 0.5rem;
-  border-left: 4px solid #ed6a5a;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-left: 4px solid;
 
   h4 {
     color: #ed6a5a;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     line-height: 1.1;
-    margin: 0.7rem 0;
+    margin: 0.5rem 0;
+    padding-bottom: 0.5rem;
+  }
+
+  @each $color, $value in (warning: $warning, info: $info) {
+    &.alert-#{$color} {
+      border-color: $value;
+
+      h4 {
+        color: $value;
+      }
+    }
   }
 }
