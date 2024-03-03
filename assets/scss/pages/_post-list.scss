@@ -1,6 +1,12 @@
 .post-entry {
-  margin: 20px 0;
-  max-width: 750px;
+  margin: 20px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  justify-items: center;
+  @include respond-to('medium') {
+    margin: 20px 40px;
+  }
 }
 
 .post-entry-divider {
@@ -9,7 +15,6 @@
   display: block;
   height: 1px;
   position: relative;
-  max-width: 750px;
 }
 
 .post-list-title {
@@ -45,4 +50,32 @@
 .post-list-categories {
   display: inline-flex;
   column-gap: 10px;
+}
+
+.post-entry-main {
+  flex: 1;
+}
+
+.post-entry-image {
+  display: flex;
+  margin-left: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 200px;
+  overflow: hidden;
+
+  display: none;
+  @include respond-to('medium') {
+    display: block;
+  }
+}
+
+.post-list-image {
+  max-height: 130px;
+  width: 100%;
+  border-radius: 5px;
+  padding: auto;
+  flex-grow: 0;
 }
