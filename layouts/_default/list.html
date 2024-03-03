@@ -27,7 +27,9 @@
       {{ else }}
         {{ partial "general/fallback-text.html" . }}
       {{ end }}
-      {{ template "_internal/pagination.html" . }}
+      <div class="list-pagination">
+        {{ template "_internal/pagination.html" . }}
+      </div>
     </section>
   </div>
 {{ end }}
