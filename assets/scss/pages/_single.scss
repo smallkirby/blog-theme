@@ -25,7 +25,7 @@
 .single-container-post {
   padding: 0;
 
-  @include respond-to('x-large') {
+  @include respond-to("x-large") {
     display: grid;
     gap: 1rem;
   }
@@ -37,14 +37,14 @@
   overflow: hidden;
 
   strong {
-    padding: 0.5rem;
+    padding: 0.1rem;
     font-weight: 700;
     color: var(--color-bold);
   }
 }
 
 .series {
-  @include font-size('base');
+  @include font-size("base");
   margin: 2rem 0;
 }
 
@@ -53,7 +53,7 @@
   border: 1px solid var(--color-primary);
   border-radius: 5px;
   padding: 0.3rem;
-  @include font-size('sm');
+  @include font-size("sm");
   font-weight: 500;
   margin-left: 10px;
 }
@@ -70,7 +70,7 @@
     border: 1px solid var(--color-contrast-medium-low);
     border-radius: 12px;
     padding: 10px;
-    @include font-size('base');
+    @include font-size("base");
     max-width: 300px;
 
     &:hover {
@@ -81,5 +81,5 @@
 }
 
 .related-posts {
-  @include font-size('base');
+  @include font-size("base");
 }
