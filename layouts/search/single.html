@@ -1,34 +1,40 @@
 {{ define "main" }}
-<div class="container">
-  <section class="page-header--c">
-    <h1 class="page-header-title">{{ .Title }}</h1>
-    <p id="search-result-string">
-      <span id="search-num-string"></span> for "<span id="search-term"></span>"
-    </p>
-    <p id="search-loading-string" class="search-loading">Loading indexes...</p>
-  </section>
+  <div class="container">
+    <section class="page-header--c">
+      <h1 class="page-header-title">{{ .Title }}</h1>
+      <p id="search-result-string">
+        <span id="search-num-string"></span> for "<span id="search-term"></span
+        >"
+      </p>
+      <p id="search-loading-string" class="search-loading">
+        Loading indexes...
+      </p>
+    </section>
 
-  <section class="generic-single">
-    <div id="search-results"></div>
+    <section class="generic-single">
+      <div id="search-results"></div>
 
-    <template id="search-result" hidden>
-      <div class="post-entry">
-        <h3 class="post-list-title">
-          <a class="search-post-title"></a>
-        </h3>
-        <div class="post-list-meta">
-          <div class="post-list-dates">
-            Posted: <span class="search-post-date"></span>
+      <template id="search-result" hidden>
+        <div class="post-entry">
+          <h3 class="post-list-title">
+            <a class="search-post-title"></a>
+          </h3>
+          <div class="post-list-meta">
+            <div class="post-list-dates">
+              Posted: <span class="search-post-date"></span>
+            </div>
+            <div class="post-list-categories search-list-categories"></div>
           </div>
-          <div class="post-list-categories search-list-categories"></div>
+          <p class="post-list-summary search-list-summary">
+            {{- with .Params.Summary -}}
+              {{- . -}}
+            {{- else -}}
+              {{- .Description -}}
+            {{- end -}}
+          </p>
         </div>
-        <p class="post-list-summary search-list-summary">
-          {{- with .Params.Summary -}} {{- . -}} {{- else -}} {{- .Description
-          -}} {{- end -}}
-        </p>
-      </div>
-      <div class="post-entry-divider"></div>
-    </template>
-  </section>
-</div>
+        <div class="post-entry-divider"></div>
+      </template>
+    </section>
+  </div>
 {{ end }}

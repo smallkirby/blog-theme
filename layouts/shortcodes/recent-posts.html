@@ -9,12 +9,19 @@
     </h2>
     <select name="choice" id="select-posts">
       {{ range (where site.Sections "Section" "posts") }}
-      <option value="all-{{ .Name | lower }}" selected>All {{ .Name | lower }}</option>
-      {{ range .Sections }}
-      {{ if .CurrentSection.Pages }}
-      <option value="{{ replace .CurrentSection.RelPermalink "/" "" | lower }}">{{ .CurrentSection.Name }}</option>
-      {{ end }}
-      {{ end }}
+        <option value="all-{{ .Name | lower }}" selected>
+          All
+          {{ .Name | lower }}
+        </option>
+        {{ range .Sections }}
+          {{ if .CurrentSection.Pages }}
+            <option
+              value="{{ replace .CurrentSection.RelPermalink "/" "" | lower }}"
+            >
+              {{ .CurrentSection.Name }}
+            </option>
+          {{ end }}
+        {{ end }}
       {{ end }}
     </select>
   </div>
@@ -23,12 +30,16 @@
     {{ $num = 10 }}
   {{ end }}
   {{ range (where site.RegularPages "Section" "posts" | first $num) }}
-    <div class="post-entry-filter entry--{{ replace .CurrentSection.RelPermalink "/" "" | lower }}">
+    <div
+      class="post-entry-filter entry--{{ replace .CurrentSection.RelPermalink "/" "" | lower }}"
+    >
       {{ partial "posts/post-entry.html" . }}
       <div class="post-entry-divider"></div>
     </div>
   {{ else }}
     {{ partial "general/fallback-text.html" . }}
   {{ end }}
-  <a class="btn-secondary see-more" href="{{ "posts/" | relURL }}">More Posts</a>
+  <a class="btn-secondary see-more" href="{{ "posts/" | relURL }}"
+    >More Posts</a
+  >
 </section>

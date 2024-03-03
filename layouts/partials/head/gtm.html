@@ -1,5 +1,6 @@
-{{ if not .Site.IsServer }} {{ with .Site.Params.gtm_id }}
-<!-- Google Tag Manager -->
+{{ if not .Site.IsServer }}
+  {{ with .Site.Params.gtm_id }}
+    <!-- Google Tag Manager -->
 <script>
   (function (w, d, s, l, i) {
     w[l] = w[l] || [];
@@ -12,5 +13,6 @@
     f.parentNode.insertBefore(j, f);
   })(window, document, 'script', 'dataLayer', '{{ . }}');
 </script>
-<!-- End Google Tag Manager -->
-{{ end }} {{ end }}
+    <!-- End Google Tag Manager -->
+  {{ end }}
+{{ end }}

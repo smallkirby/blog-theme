@@ -1,6 +1,7 @@
 {{ $color := .Get "color" | default "warning" }}
-<div class="alert alert-{{$color}}" role="alert">
+<div class="alert alert-{{ $color }}" role="alert">
   {{ with .Get "title" }}
-  <h4 class="alert-heading">{{ . | safeHTML }}</h4>
-  {{ end }} {{.Inner | markdownify}}
+    <h4 class="alert-heading">{{ . | safeHTML }}</h4>
+  {{ end }}
+  {{ .Inner | markdownify }}
 </div>
