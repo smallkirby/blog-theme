@@ -16,22 +16,36 @@
 
       <template id="search-result" hidden>
         <div class="post-entry">
-          <h3 class="post-list-title">
-            <a class="search-post-title"></a>
-          </h3>
-          <div class="post-list-meta">
-            <div class="post-list-dates">
-              Posted: <span class="search-post-date"></span>
+          <div class="post-entry-main">
+            <h3 class="post-list-title">
+              <a class="search-post-title"></a>
+            </h3>
+            <div class="post-list-meta">
+              <div class="post-list-dates">
+                Posted: <span class="search-post-date"></span>
+              </div>
+              <div class="post-list-categories search-list-categories"></div>
             </div>
-            <div class="post-list-categories search-list-categories"></div>
+            <p class="post-list-summary search-list-summary">
+              {{- with .Params.Summary -}}
+                {{- . -}}
+              {{- else -}}
+                {{- .Description -}}
+              {{- end -}}
+            </p>
           </div>
-          <p class="post-list-summary search-list-summary">
-            {{- with .Params.Summary -}}
-              {{- . -}}
-            {{- else -}}
-              {{- .Description -}}
-            {{- end -}}
-          </p>
+
+          <div class="post-entry-image">
+            {{ with .Params.images }}
+              {{ $imgurl := printf "%s%s" $.Permalink
+                (index $.Params.images 0) | absURL
+              }}
+              <a href="{{ $.Permalink }}">
+                <img src="{{ $imgurl }}" class="post-list-image" />
+              </a>
+            {{ else }}
+            {{ end }}
+          </div>
         </div>
         <div class="post-entry-divider"></div>
       </template>
