@@ -2,7 +2,7 @@
 <html lang="{{ .Site.LanguageCode | default "en-US" }}">
   {{- partial "head/head.html" . -}}
   <body>
-    {{ if and (not .Site.IsServer) (.Site.Params.gtm_id) }}
+    {{ if and (not hugo.IsServer) (.Site.Params.gtm_id) }}
       <!-- Google Tag Manager (noscript) -->
       <noscript
         ><iframe

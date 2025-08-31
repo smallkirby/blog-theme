@@ -3,7 +3,7 @@
   "enableSourceMap" (not hugo.IsProduction))
 }}
 {{ $style := $sass |
-  resources.ToCSS $options
+  css.Sass $options
 }}
 {{ $custom := "" }}
 {{ $custom_no_bundle := false }}

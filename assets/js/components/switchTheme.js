@@ -32,11 +32,6 @@ function switchTheme() {
         document.documentElement.setAttribute('data-theme', 'light');
         localStorage.setItem('themeSwitch', 'light');
       }
-
-      // Reset Disqus to match new color scheme
-      if (typeof DISQUS !== 'undefined') {
-        DISQUS.reset({ reload: true });
-      }
     }
   }
 }

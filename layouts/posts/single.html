@@ -115,11 +115,6 @@
               {{ partial "posts/related.html" . }}
               {{ partial "posts/next-previous.html" . }}
             {{- end }}
-            {{ if and (.Site.DisqusShortname) (not .Site.IsServer) (ne .Params.disable_comments true) }}
-              <div class="section">
-                {{ template "_internal/disqus.html" . }}
-              </div>
-            {{ end }}
           </aside>
         </div>
       </div>

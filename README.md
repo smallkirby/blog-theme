@@ -1,5 +1,7 @@
 # Blog Theme of Hugo
 
+![Hugo](https://shields.io/badge/Hugo-v0%2E148%2E2-blue?logo=hugo&color=FF69B4&style=for-the-badge)
+
 ![Build](https://github.com/smallkirby/blog-theme/actions/workflows/lint.yml/badge.svg)
 
 A blog theme of Hugo.

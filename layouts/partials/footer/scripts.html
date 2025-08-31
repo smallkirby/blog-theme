@@ -39,7 +39,7 @@
 <script src="{{ $final.Permalink }}"></script>
 
 <!-- Add Google Analytics v4 tag if not using GTM -->
-{{ if and (not .Site.IsServer) (not .Site.Params.gtm_id) }}
+{{ if and (not hugo.IsServer) (not .Site.Params.gtm_id) }}
   {{ template
     "_internal/google_analytics.html" .
   }}
