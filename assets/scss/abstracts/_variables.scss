@@ -31,6 +31,19 @@ $gv-light-palette: (
   yellow2: #fabd2f,
   green1: #98971a,
   green2: #b8bb26,
+  // Extended category colors for light mode
+  ctf-primary: #2563eb,    // Modern blue for CTF
+  ctf-secondary: #3b82f6,  // Lighter blue for CTF
+  game-primary: #16a34a,   // Modern green for Game
+  game-secondary: #22c55e, // Lighter green for Game  
+  chatter-primary: #9333ea,  // Modern purple for Chatter
+  chatter-secondary: #a855f7, // Lighter purple for Chatter
+  // Additional accent colors
+  accent1: #f59e0b,        // Warm amber
+  accent2: #ef4444,        // Modern red
+  accent3: #06b6d4,        // Cyan
+  gradient-start: #4f46e5, // Indigo for gradients
+  gradient-end: #7c3aed,   // Violet for gradients
 );
 $gv-dark-palette: (
   bg: #282828,
@@ -60,6 +73,19 @@ $gv-dark-palette: (
   yellow2: #fabd2f,
   green1: #98971a,
   green2: #b8bb26,
+  // Extended category colors for dark mode
+  ctf-primary: #60a5fa,    // Brighter blue for CTF in dark
+  ctf-secondary: #93c5fd,  // Even lighter blue for CTF
+  game-primary: #4ade80,   // Brighter green for Game in dark
+  game-secondary: #86efac, // Even lighter green for Game
+  chatter-primary: #c084fc,  // Brighter purple for Chatter in dark
+  chatter-secondary: #d8b4fe, // Even lighter purple for Chatter
+  // Additional accent colors for dark mode
+  accent1: #fbbf24,        // Brighter amber for dark
+  accent2: #f87171,        // Softer red for dark
+  accent3: #22d3ee,        // Brighter cyan for dark
+  gradient-start: #6366f1, // Brighter indigo for dark gradients
+  gradient-end: #8b5cf6,   // Brighter violet for dark gradients
 );
 
 @function dcolor($color) {
@@ -83,15 +109,31 @@ $gv-dark-palette: (
   --color-contrast-medium-high: #{lcolor(fg0)};
   --color-contrast-high: #{lcolor(fg0)};
   --color-contrast-higher: black;
-  --color-title: #{lcolor(orange1)};
+  --color-title: var(--color-primary);
   --color-scroll-thumb: #{lcolor(bg3)};
 
   --color-text: var(--color-contrast-high);
   --color-link: #{lcolor(aqua1)};
   --color-highlight: #{lcolor(orange2)};
   --color-bold: #{lcolor(purple1)};
-  --color-link: #{lcolor(aqua1)};
   --color-link-hover: #{lcolor(aqua2)};
+
+  /* Category colors */
+  --color-ctf-primary: #{lcolor(ctf-primary)};
+  --color-ctf-secondary: #{lcolor(ctf-secondary)};
+  --color-game-primary: #{lcolor(game-primary)};
+  --color-game-secondary: #{lcolor(game-secondary)};
+  --color-chatter-primary: #{lcolor(chatter-primary)};
+  --color-chatter-secondary: #{lcolor(chatter-secondary)};
+
+  /* Accent colors */
+  --color-accent1: #{lcolor(accent1)};
+  --color-accent2: #{lcolor(accent2)};
+  --color-accent3: #{lcolor(accent3)};
+
+  /* Gradient colors */
+  --color-gradient-start: #{lcolor(gradient-start)};
+  --color-gradient-end: #{lcolor(gradient-end)};
 
   --font-size-sm: clamp(0.8rem, 0.17vw + 0.76rem, 0.89rem);
   --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
@@ -122,15 +164,31 @@ $gv-dark-palette: (
   --color-contrast-medium-high: #{dcolor(fg2)};
   --color-contrast-high: #{dcolor(fg0)};
   --color-contrast-higher: white;
-  --color-title: #{dcolor(orange1)};
+  --color-title: var(--color-primary);
   --color-scroll-thumb: #{dcolor(bg1)};
 
   --color-text: var(--color-contrast-high);
   --color-link: #{dcolor(aqua1)};
   --color-highlight: #{dcolor(purple1)};
   --color-bold: #{dcolor(orange1)};
-  --color-link: #{dcolor(aqua2)};
   --color-link-hover: #{dcolor(aqua1)};
+
+  /* Category colors for dark mode */
+  --color-ctf-primary: #{dcolor(ctf-primary)};
+  --color-ctf-secondary: #{dcolor(ctf-secondary)};
+  --color-game-primary: #{dcolor(game-primary)};
+  --color-game-secondary: #{dcolor(game-secondary)};
+  --color-chatter-primary: #{dcolor(chatter-primary)};
+  --color-chatter-secondary: #{dcolor(chatter-secondary)};
+
+  /* Accent colors for dark mode */
+  --color-accent1: #{dcolor(accent1)};
+  --color-accent2: #{dcolor(accent2)};
+  --color-accent3: #{dcolor(accent3)};
+
+  /* Gradient colors for dark mode */
+  --color-gradient-start: #{dcolor(gradient-start)};
+  --color-gradient-end: #{dcolor(gradient-end)};
 
   --code-bg: #{dcolor(bg0)};
 }

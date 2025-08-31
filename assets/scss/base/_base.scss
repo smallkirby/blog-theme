@@ -153,8 +153,10 @@ li > code {
   background-color: var(--color-contrast-lower);
   font-size: 1rem;
   color: var(--color-inline-code);
-  padding: 2px 5px;
-  border-radius: 5px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--color-contrast-low);
+  font-weight: 500;
 }
 
 form {

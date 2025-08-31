@@ -20,6 +20,18 @@
     padding: 2.5rem 0;
     flex-direction: row;
   }
+  
+  @include respond-to('large') {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem 0;
+    gap: 3rem 4rem;
+  }
+  
+  @include respond-to('x-large') {
+    max-width: 1000px;
+    padding: 3.5rem 0;
+  }
 }
 
 .hero-info {
@@ -75,13 +87,20 @@
 
 .home-section-title {
   &::after {
-    background-color: var(--color-contrast-medium);
+    background: linear-gradient(
+      90deg,
+      var(--color-primary) 0%,
+      var(--color-primary) 60%,
+      transparent 100%
+    );
     content: '';
     display: block;
-    height: 2px;
+    height: 3px;
     position: relative;
-    width: 80px;
+    width: 160px;
     top: 8px;
+    border-radius: 6px;
+    opacity: 0.7;
   }
 }
 
@@ -96,6 +115,17 @@
   align-items: center;
   gap: 30px;
   margin-bottom: 50px;
+  
+  @include respond-to('large') {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 60px;
+  }
+  
+  @include respond-to('x-large') {
+    max-width: 1000px;
+  }
 }
 
 #select-posts {
@@ -109,4 +139,11 @@
 
 .see-more {
   margin-top: 30px;
+  
+  @include respond-to('large') {
+    display: block;
+    margin: 40px auto 0;
+    width: fit-content;
+  }
 }
+

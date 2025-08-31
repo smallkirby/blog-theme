@@ -19,6 +19,16 @@
   @include respond-to('medium') {
     margin: 24px 40px;
   }
+  
+  @include respond-to('large') {
+    margin: 24px auto;
+    max-width: 900px;
+  }
+  
+  @include respond-to('x-large') {
+    margin: 28px auto;
+    max-width: 1000px;
+  }
 }
 
 .post-entry {
@@ -32,10 +42,17 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   cursor: pointer;
+  border: 1px solid var(--color-contrast-low);
   
   @include respond-to('medium') {
     flex-direction: row;
     padding: 24px;
+  }
+  
+  @include respond-to('large') {
+    padding: 28px;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   }
 }
 
@@ -43,6 +60,11 @@
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
   transform: translateY(-2px);
   background-color: var(--color-contrast-lowest);
+  
+  @include respond-to('large') {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    transform: translateY(-4px);
+  }
 }
 
 // Ensure no text decoration on any child elements
@@ -101,7 +123,7 @@
   column-gap: 8px;
   
   .category-tag {
-    background-color: var(--color-contrast-low);
+    background-color: var(--color-contrast-medium-low);
     color: var(--color-contrast-high);
     padding: 4px 10px;
     border-radius: 16px;
@@ -110,11 +132,14 @@
     font-weight: 500;
     transition: all 0.2s ease;
     cursor: pointer;
+    border: 1px solid var(--color-contrast-medium);
     
     &:hover {
       background-color: var(--color-primary);
-      color: white;
+      color: var(--color-bg);
+      border-color: var(--color-primary);
       transform: scale(1.05);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     }
   }
 }
