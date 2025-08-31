@@ -1,30 +1,73 @@
-.post-entry {
+.post-entry-link {
+  text-decoration: none !important;
+  color: inherit;
+  display: block;
   margin: 20px 0px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  justify-items: center;
+  
+  &:hover {
+    text-decoration: none !important;
+  }
+  
+  &:focus {
+    text-decoration: none !important;
+  }
+  
+  &:visited {
+    text-decoration: none !important;
+  }
+  
   @include respond-to('medium') {
-    margin: 20px 40px;
+    margin: 24px 40px;
   }
 }
 
+.post-entry {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  justify-items: center;
+  background-color: var(--color-contrast-lower);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  
+  @include respond-to('medium') {
+    flex-direction: row;
+    padding: 24px;
+  }
+}
+
+.post-entry-link:hover .post-entry {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+  background-color: var(--color-contrast-lowest);
+}
+
+// Ensure no text decoration on any child elements
+.post-entry-link * {
+  text-decoration: none !important;
+}
+
+.post-entry-link:hover * {
+  text-decoration: none !important;
+}
+
 .post-entry-divider {
-  background-color: var(--color-contrast-low);
-  content: '';
-  display: block;
-  height: 1px;
-  position: relative;
+  display: none;
 }
 
 .post-list-title {
-  font-weight: 400;
-  margin: 0;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  line-height: 1.4;
   @include font-size('md');
 
   a {
     text-decoration: none;
     color: var(--color-contrast-high);
+    transition: color 0.2s ease;
 
     &:hover {
       color: var(--color-primary);
@@ -35,12 +78,18 @@
 .post-list-summary {
   @extend .summary-text;
   @include font-size('base');
-  margin: 10px 0 0 0;
+  margin: 8px 0 0 0;
+  line-height: 1.6;
+  color: var(--color-contrast-medium-high);
 }
 
 .post-list-meta {
   @extend .meta-text;
-  margin-top: 10px;
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
 }
 
 .post-list-dates {
@@ -49,7 +98,25 @@
 
 .post-list-categories {
   display: inline-flex;
-  column-gap: 10px;
+  column-gap: 8px;
+  
+  .category-tag {
+    background-color: var(--color-contrast-low);
+    color: var(--color-contrast-high);
+    padding: 4px 10px;
+    border-radius: 16px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    
+    &:hover {
+      background-color: var(--color-primary);
+      color: white;
+      transform: scale(1.05);
+    }
+  }
 }
 
 .post-entry-main {
@@ -58,26 +125,37 @@
 
 .post-entry-image {
   display: flex;
-  margin-left: 0.5rem;
   align-items: center;
   justify-content: center;
-  margin-top: auto;
-  margin-bottom: auto;
-  width: 200px;
   overflow: hidden;
+  flex-shrink: 0;
+  margin-bottom: 16px;
+  order: -1;
 
-  display: none;
   @include respond-to('medium') {
-    display: block;
+    margin-left: 1rem;
+    margin-bottom: auto;
+    margin-top: auto;
+    width: 220px;
+    order: initial;
   }
 }
 
 .post-list-image {
-  max-height: 130px;
+  max-height: 200px;
   width: 100%;
-  border-radius: 5px;
-  padding: auto;
+  border-radius: 8px;
+  object-fit: cover;
   flex-grow: 0;
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: scale(1.05);
+  }
+  
+  @include respond-to('medium') {
+    max-height: 140px;
+  }
 }
 
 .list-pagination {
