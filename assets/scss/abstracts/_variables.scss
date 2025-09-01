@@ -197,8 +197,9 @@ $gv-dark-palette: (
 
 /// Regular font family
 /// @type List
-$text-font-stack: 'Roboto', 'Helvetica Neue Light', 'Helvetica Neue',
-  'Helvetica', 'Arial', sans-serif;
+$text-font-stack: 'Roboto', -apple-system, BlinkMacSystemFont, 
+  'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Yu Gothic Medium', 'Meiryo', 
+  'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 
 /// Code (monospace) font family
 /// @type List
