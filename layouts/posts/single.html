@@ -7,18 +7,21 @@
             {{- .Title -}}
           </a>
         </h1>
-        <div class="post-list-meta">
-          {{ partial "posts/post-meta.html" . }}
-          {{ with .Params.categories }}
-            <div class="post-list-categories">
-              {{ range . }}
-                <a href="{{ "categories" | absURL }}/{{ . | urlize }}/"
-                  >{{ . }}</a
-                >
-              {{ end }}
-            </div>
-          {{ end }}
-          {{ partial "general/label-drafts.html" . }}
+        <div class="post-header-meta">
+          <div class="post-header-meta-main">
+            {{ with .Params.categories }}
+              <div class="post-categories-inline">
+                <span class="post-categories-label">カテゴリー:</span>
+                {{ range . }}
+                  <a class="post-category-badge-inline" href="{{ "categories" | absURL }}/{{ . | urlize }}/">{{ . }}</a>
+                {{ end }}
+              </div>
+            {{ end }}
+            {{ partial "general/label-drafts.html" . }}
+          </div>
+          <div class="post-header-meta-side">
+            {{ partial "posts/post-meta.html" . }}
+          </div>
         </div>
         <p class="page-header-desc">
           {{- with .Params.Summary -}}

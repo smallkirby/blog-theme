@@ -3,7 +3,7 @@
     <div class="post-entry-main">
       <h3 class="post-list-title">{{ .Title }}</h3>
       <div class="post-list-meta">
-        {{ partial "posts/post-meta.html" . }}
+        {{ partial "posts/post-meta-inline.html" . }}
         {{ with .Params.categories }}
           <div class="post-list-categories">
             {{ range . }}

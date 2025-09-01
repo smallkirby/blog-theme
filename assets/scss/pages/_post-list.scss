@@ -3,29 +3,29 @@
   color: inherit;
   display: block;
   margin: 20px 0px;
-  
+
   &:hover {
     text-decoration: none !important;
   }
-  
+
   &:focus {
     text-decoration: none !important;
   }
-  
+
   &:visited {
     text-decoration: none !important;
   }
-  
-  @include respond-to('medium') {
+
+  @include respond-to("medium") {
     margin: 24px 40px;
   }
-  
-  @include respond-to('large') {
+
+  @include respond-to("large") {
     margin: 24px auto;
     max-width: 900px;
   }
-  
-  @include respond-to('x-large') {
+
+  @include respond-to("x-large") {
     margin: 28px auto;
     max-width: 1000px;
   }
@@ -43,13 +43,13 @@
   transition: all 0.3s ease;
   cursor: pointer;
   border: 1px solid var(--color-contrast-low);
-  
-  @include respond-to('medium') {
+
+  @include respond-to("medium") {
     flex-direction: row;
     padding: 24px;
   }
-  
-  @include respond-to('large') {
+
+  @include respond-to("large") {
     padding: 28px;
     border-radius: 16px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
@@ -60,14 +60,13 @@
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
   transform: translateY(-2px);
   background-color: var(--color-contrast-lowest);
-  
-  @include respond-to('large') {
+
+  @include respond-to("large") {
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
     transform: translateY(-4px);
   }
 }
 
-// Ensure no text decoration on any child elements
 .post-entry-link * {
   text-decoration: none !important;
 }
@@ -84,7 +83,7 @@
   font-weight: 600;
   margin: 0 0 8px 0;
   line-height: 1.4;
-  @include font-size('md');
+  @include font-size("md");
 
   a {
     text-decoration: none;
@@ -99,7 +98,7 @@
 
 .post-list-summary {
   @extend .summary-text;
-  @include font-size('base');
+  @include font-size("base");
   margin: 8px 0 0 0;
   line-height: 1.6;
   color: var(--color-contrast-medium-high);
@@ -114,7 +113,7 @@
   align-items: center;
   gap: 12px;
 
-  @include respond-to('medium') {
+  @include respond-to("medium") {
     margin-top: 14px;
     margin-bottom: 24px;
     gap: 16px;
@@ -124,10 +123,10 @@
 .post-list-dates {
   font-weight: 500;
   color: var(--color-contrast-medium-high);
-  @include font-size('sm');
-  
-  @include respond-to('medium') {
-    @include font-size('base');
+  @include font-size("sm");
+
+  @include respond-to("medium") {
+    @include font-size("base");
   }
 }
 
@@ -136,33 +135,63 @@
   column-gap: 8px;
   flex-wrap: wrap;
   row-gap: 6px;
-  
-  a {
+
+  .category-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.6rem;
     background-color: var(--color-primary);
-    color: var(--color-bg);
-    padding: 4px 10px;
-    border-radius: 14px;
+    color: white;
     text-decoration: none;
     font-size: 0.75rem;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    border: 1px solid var(--color-primary);
-    text-transform: capitalize;
-    line-height: 1.2;
-    
-    @include respond-to('medium') {
-      padding: 5px 12px;
+    font-weight: 500;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+
+    &:hover {
+      background-color: var(--color-primary);
+      transform: translateY(-1px);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    @include respond-to("medium") {
+      padding: 0.3rem 0.7rem;
       font-size: 0.8rem;
     }
-    
-    &:hover {
-      background-color: transparent;
-      color: var(--color-primary);
-      transform: translateY(-1px);
-      box-shadow: 0 2px 6px rgba(var(--color-primary-rgb), 0.3);
-    }
   }
+}
+
+.post-meta-inline {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  font-size: 0.8rem;
+  color: var(--color-contrast-medium-high);
+
+  @include respond-to("medium") {
+    font-size: 0.85rem;
+    gap: 1.4rem;
+  }
+}
+
+.post-meta-inline-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.post-meta-inline-icon {
+  width: 12px;
+  height: 12px;
+  color: var(--color-primary);
+  flex-shrink: 0;
+  opacity: 0.8;
+}
+
+.post-meta-inline-text {
+  font-weight: 500;
+  color: var(--color-contrast-medium-high);
 }
 
 .post-entry-main {
@@ -178,7 +207,7 @@
   margin-bottom: 16px;
   order: -1;
 
-  @include respond-to('medium') {
+  @include respond-to("medium") {
     margin-left: 1rem;
     margin-bottom: auto;
     margin-top: auto;
@@ -194,12 +223,12 @@
   object-fit: cover;
   flex-grow: 0;
   transition: transform 0.3s ease;
-  
+
   &:hover {
     transform: scale(1.05);
   }
-  
-  @include respond-to('medium') {
+
+  @include respond-to("medium") {
     max-height: 140px;
   }
 }

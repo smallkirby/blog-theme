@@ -1,0 +1,22 @@
+<div class="post-meta-inline">
+  <span class="post-meta-inline-item">
+    <svg class="post-meta-inline-icon" width="12" height="12" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+    </svg>
+    <time class="post-meta-inline-text" datetime="{{ .PublishDate.Format "2006-01-02T15:04:05Z07:00" }}">
+      {{- if not .PublishDate.IsZero -}}
+        {{ .PublishDate.Format "2006/01/02" -}}
+      {{- else -}}
+        {{ .Date.Format "2006/01/02" -}}
+      {{- end -}}
+    </time>
+  </span>
+  
+  <span class="post-meta-inline-item">
+    <svg class="post-meta-inline-icon" width="12" height="12" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+      <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+    </svg>
+    <span class="post-meta-inline-text">{{ .ReadingTime }}分</span>
+  </span>
+</div>
