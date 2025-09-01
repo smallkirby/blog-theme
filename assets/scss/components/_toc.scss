@@ -2,7 +2,7 @@
   position: sticky;
   top: 20px;
   display: none;
-  @include respond-to("x-large") {
+  @include respond-to('x-large') {
     align-self: start;
     order: 2;
     display: flex;
@@ -29,7 +29,7 @@
 
 .toc-header,
 .toc-drop-icon {
-  @include font-size("sm");
+  @include font-size('sm');
   font-weight: 600;
   margin: 0 0 1rem 0;
   text-align: left;
@@ -37,7 +37,7 @@
   text-transform: uppercase;
   letter-spacing: 0.5px;
 
-  @include respond-to("x-large") {
+  @include respond-to('x-large') {
     border-bottom: 2px solid var(--color-contrast-medium-low);
     padding-bottom: 0.5rem;
     margin-bottom: 1.2rem;
@@ -48,13 +48,13 @@
   display: none;
   text-align: left;
   padding-left: 1.2rem;
-  @include font-size("sm");
+  @include font-size('sm');
 
   &--active {
     display: block;
   }
 
-  @include respond-to("x-large") {
+  @include respond-to('x-large') {
     display: block;
 
     &--active {
@@ -84,7 +84,7 @@
       position: relative;
 
       &:before {
-        content: "•";
+        content: '•';
         color: var(--color-primary);
         position: absolute;
         left: -1rem;
@@ -111,7 +111,7 @@
 
       ul li {
         &:before {
-          content: "→";
+          content: '→';
           font-size: 0.8rem;
           top: 0.4rem;
         }

@@ -27,12 +27,12 @@
     transition: all 0.3s ease;
     cursor: pointer;
     border: 1px solid var(--color-contrast-medium);
-    
+
     @include respond-to('medium') {
       padding: 8px 16px;
       font-size: 0.9rem;
     }
-    
+
     &:hover {
       background-color: var(--color-primary);
       color: var(--color-bg);

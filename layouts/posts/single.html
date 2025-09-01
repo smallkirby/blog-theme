@@ -13,7 +13,11 @@
               <div class="post-categories-inline">
                 <span class="post-categories-label">カテゴリー:</span>
                 {{ range . }}
-                  <a class="post-category-badge-inline" href="{{ "categories" | absURL }}/{{ . | urlize }}/">{{ . }}</a>
+                  <a
+                    class="post-category-badge-inline"
+                    href="{{ "categories" | absURL }}/{{ . | urlize }}/"
+                    >{{ . }}</a
+                  >
                 {{ end }}
               </div>
             {{ end }}

@@ -7,7 +7,9 @@
         {{ with .Params.categories }}
           <div class="post-list-categories">
             {{ range . }}
-              <span class="category-tag" data-category="{{ . | urlize }}">{{ . }}</span>
+              <span class="category-tag" data-category="{{ . | urlize }}"
+                >{{ . }}</span
+              >
             {{ end }}
           </div>
         {{ end }}
