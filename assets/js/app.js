@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import {
-  switcher,
   clipboard,
   highlightToc,
   algoliaSearch,

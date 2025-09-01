@@ -13,14 +13,14 @@
 @import 'layout/header', 'layout/footer', 'layout/alert.scss';
 
 // 5. Components
-@import 'components/switch-theme', 'components/socials', 'components/buttons',
-  'components/pagination', 'components/draft-label', 'components/clipboard',
-  'components/code-highlight', 'components/markdown', 'components/toc',
-  'components/page-header', 'components/search', 'components/hatena';
+@import 'components/socials', 'components/buttons', 'components/pagination',
+  'components/draft-label', 'components/clipboard', 'components/code-highlight',
+  'components/markdown', 'components/toc', 'components/page-header',
+  'components/search', 'components/hatena';
 
 // 6. Page-specific styles
 @import 'pages/home', 'pages/contact', 'pages/single', 'pages/terms',
   'pages/errors', 'pages/post-list';
 
 // 7. Chroma Code styles
-@import 'components/code_gruvbox', 'components/code_gruvbox-light';
+@import 'components/code_gruvbox';

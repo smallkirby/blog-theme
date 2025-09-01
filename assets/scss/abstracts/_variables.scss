@@ -117,63 +117,7 @@ $gv-dark-palette: (
   @return map-get($gv-light-palette, $color);
 }
 
-:root,
-[data-theme='light'] {
-  --color-primary: #{lcolor(aqua1)};
-  --color-inline-code: hsl(0, 81%, 35%);
-
-  /* color contrasts */
-  --color-bg: #{lcolor(bg0h)};
-  --color-contrast-lower: #{lcolor(bg1)};
-  --color-contrast-low: #{lcolor(bg2)};
-  --color-contrast-medium-low: #{lcolor(bg3)};
-  --color-contrast-medium: #{lcolor(fg1)};
-  --color-contrast-medium-high: #{lcolor(fg0)};
-  --color-contrast-high: #{lcolor(fg0)};
-  --color-contrast-higher: black;
-  --color-title: var(--color-primary);
-  --color-scroll-thumb: #{lcolor(bg3)};
-
-  --color-text: var(--color-contrast-high);
-  --color-link: #{lcolor(aqua1)};
-  --color-highlight: #{lcolor(orange2)};
-  --color-bold: #{lcolor(purple1)};
-  --color-link-hover: #{lcolor(aqua2)};
-
-  /* Category colors */
-  --color-ctf-primary: #{lcolor(ctf-primary)};
-  --color-ctf-secondary: #{lcolor(ctf-secondary)};
-  --color-game-primary: #{lcolor(game-primary)};
-  --color-game-secondary: #{lcolor(game-secondary)};
-  --color-chatter-primary: #{lcolor(chatter-primary)};
-  --color-chatter-secondary: #{lcolor(chatter-secondary)};
-
-  /* Accent colors */
-  --color-accent1: #{lcolor(accent1)};
-  --color-accent2: #{lcolor(accent2)};
-  --color-accent3: #{lcolor(accent3)};
-
-  /* Gradient colors */
-  --color-gradient-start: #{lcolor(gradient-start)};
-  --color-gradient-end: #{lcolor(gradient-end)};
-
-  --font-size-sm: clamp(0.8rem, 0.17vw + 0.76rem, 0.89rem);
-  --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
-  --font-size-md: clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem);
-  --font-size-lg: clamp(1.56rem, 1vw + 1.31rem, 2.11rem);
-  --font-size-xl: clamp(1.95rem, 1.56vw + 1.56rem, 2.81rem);
-  --font-size-xxl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
-  --font-size-xxxl: clamp(3.05rem, 3.54vw + 2.17rem, 5rem);
-
-  --code-bg: #{lcolor(bg0)};
-}
-
-[data-theme] {
-  background-color: var(--color-bg);
-  color: var(--color-contrast-high);
-}
-
-[data-theme='dark'] {
+:root {
   --color-primary: #{dcolor(aqua1)};
   --color-inline-code: hsl(0, 81%, 70%);
 
@@ -212,7 +156,18 @@ $gv-dark-palette: (
   --color-gradient-start: #{dcolor(gradient-start)};
   --color-gradient-end: #{dcolor(gradient-end)};
 
+  --font-size-sm: clamp(0.8rem, 0.17vw + 0.76rem, 0.89rem);
+  --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
+  --font-size-md: clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem);
+  --font-size-lg: clamp(1.56rem, 1vw + 1.31rem, 2.11rem);
+  --font-size-xl: clamp(1.95rem, 1.56vw + 1.56rem, 2.81rem);
+  --font-size-xxl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
+  --font-size-xxxl: clamp(3.05rem, 3.54vw + 2.17rem, 5rem);
+
   --code-bg: #{dcolor(bg0)};
+
+  background-color: var(--color-bg);
+  color: var(--color-contrast-high);
 }
 
 // Fonts
