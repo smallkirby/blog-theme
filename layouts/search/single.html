@@ -1,53 +1,56 @@
 {{ define "main" }}
   <div class="container">
-    <section class="page-header--c">
+    <section class="page-header--c search-page-header">
       <h1 class="page-header-title">{{ .Title }}</h1>
-      <p id="search-result-string">
-        <span id="search-num-string"></span> for "<span id="search-term"></span
-        >"
-      </p>
-      <p id="search-loading-string" class="search-loading">
-        Loading indexes...
-      </p>
+
+      <!-- Search status -->
+      <div class="search-status">
+        <p id="search-result-string" class="search-result-info">
+          <span id="search-num-string" class="search-count"></span>
+          <span class="search-query-label">for</span>
+          "<span id="search-term" class="search-query"></span>"
+        </p>
+        <p id="search-loading-string" class="search-loading">
+          <span class="loading-icon">🔍</span>
+          <span class="loading-text">Loading search index...</span>
+        </p>
+      </div>
     </section>
 
     <section class="generic-single">
       <div id="search-results"></div>
 
       <template id="search-result" hidden>
-        <div class="post-entry">
-          <div class="post-entry-main">
-            <h3 class="post-list-title">
-              <a class="search-post-title"></a>
-            </h3>
-            <div class="post-list-meta">
-              <div class="post-list-dates">
-                Posted: <span class="search-post-date"></span>
+        <a class="post-entry-link search-post-link">
+          <div class="post-entry">
+            <div class="post-entry-main">
+              <h3 class="post-list-title search-post-title"></h3>
+              <div class="post-list-meta">
+                <div class="post-meta-inline">
+                  <span class="post-meta-inline-item">
+                    <svg
+                      class="post-meta-inline-icon"
+                      width="12"
+                      height="12"
+                      viewBox="0 0 16 16"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"
+                      />
+                    </svg>
+                    <time class="post-meta-inline-text search-post-date"></time>
+                  </span>
+                </div>
+                <div class="post-list-categories search-list-categories"></div>
               </div>
-              <div class="post-list-categories search-list-categories"></div>
+              <p class="post-list-summary search-list-summary"></p>
             </div>
-            <p class="post-list-summary search-list-summary">
-              {{- with .Params.Summary -}}
-                {{- . -}}
-              {{- else -}}
-                {{- .Description -}}
-              {{- end -}}
-            </p>
+            <div class="post-entry-image search-post-image">
+              <img class="post-list-image search-post-img" />
+            </div>
           </div>
-
-          <div class="post-entry-image">
-            {{ with .Params.images }}
-              {{ $imgurl := printf "%s%s" $.Permalink
-                (index $.Params.images 0) | absURL
-              }}
-              <a href="{{ $.Permalink }}">
-                <img src="{{ $imgurl }}" class="post-list-image" />
-              </a>
-            {{ else }}
-            {{ end }}
-          </div>
-        </div>
-        <div class="post-entry-divider"></div>
+        </a>
       </template>
     </section>
   </div>

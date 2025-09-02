@@ -16,9 +16,9 @@
       datetime="{{ .PublishDate.Format "2006-01-02T15:04:05Z07:00" }}"
     >
       {{- if not .PublishDate.IsZero -}}
-        {{ .PublishDate.Format "2006/01/02" -}}
+        {{ .PublishDate.Format "2006.01.02" -}}
       {{- else -}}
-        {{ .Date.Format "2006/01/02" -}}
+        {{ .Date.Format "2006.01.02" -}}
       {{- end -}}
     </time>
   </span>
@@ -38,6 +38,6 @@
         d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"
       />
     </svg>
-    <span class="post-meta-inline-text">{{ .ReadingTime }}分</span>
+    <span class="post-meta-inline-text">{{ .ReadingTime }} min</span>
   </span>
 </div>

@@ -108,12 +108,13 @@ const algoliaSearch = (() => {
               const element = template.content.cloneNode(true);
               element.querySelector('.search-post-date').textContent = dayjs(
                 doc.date
-              ).format('YYYY.MM.DD.');
-              element.querySelector('.search-post-title').href = doc.uri;
+              ).format('YYYY.MM.DD');
+              element.querySelector('.post-entry-link').href = doc.uri;
               element.querySelector('.search-post-title').textContent =
                 doc.title;
               doc.categories.forEach((category) => {
-                const categoryElement = document.createElement('a');
+                const categoryElement = document.createElement('span');
+                categoryElement.className = 'category-tag';
                 const path = category.split(' ').join('-').toLowerCase();
                 categoryElement.href = `/categories/${path}/`;
                 categoryElement.textContent = category;

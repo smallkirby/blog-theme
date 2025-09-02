@@ -6,27 +6,58 @@
 
 .search {
   display: flex;
-  justify-content: left;
-  border: 1px solid var(--color-contrast-medium-low);
-  height: 1.5em;
+  align-items: center;
+  justify-content: flex-start;
+  border: 2px solid var(--color-contrast-medium-low);
   line-height: 1;
-  border-radius: 0.75em;
-  padding: 0.25em;
-  margin-top: 0rem;
+  border-radius: 1.25em;
+  padding: 1em 0.8em;
+  margin-top: 0.6rem;
+  background: var(--color-background-secondary);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  height: 2em;
+  padding: 0.5em 0.8em;
+
+  &:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  &:focus-within {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb), 0.1);
+    background: var(--color-background);
+  }
 
   @include respond-to('small') {
-    margin-top: 1.1rem;
+    width: 100%;
   }
 }
 
 .search-icon {
-  color: var(--color-contrast-medium-low);
+  color: var(--color-contrast-medium-high);
   cursor: pointer;
-  width: 0.7em;
-  height: 0.7em;
-  margin-left: 0.3rem;
-  margin-bottom: 0.2rem;
-  vertical-align: bottom;
+  width: 1em;
+  height: 1em;
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+  transition: color 0.3s ease;
+
+  .search:hover & {
+    color: var(--color-primary);
+  }
+
+  .search:focus-within & {
+    color: var(--color-primary);
+  }
+
+  @include respond-to('small') {
+    width: 1em;
+    height: 1em;
+    margin-right: 0.5rem;
+  }
 }
 
 .search[data-running] .search-icon {
@@ -34,17 +65,45 @@
 }
 
 .search-input {
-  border-width: 0;
+  position: relative;
+  top: -2px;
+  border: none;
   padding: 0;
-  margin-left: 0.5rem;
-  padding-left: 0.5rem;
-  width: 0;
+  margin: 0;
+  width: 10em;
   outline: none;
   background: transparent;
-  transition: width 0.5s;
+  color: var(--color-contrast-high);
+  font-size: 0.85em;
+  flex: 1;
+  min-width: 0;
+  transition: all 0.3s ease;
+
+  &::placeholder {
+    color: var(--color-contrast-medium);
+    font-style: normal;
+  }
+
+  &:focus {
+    width: 12em;
+
+    &::placeholder {
+      color: var(--color-contrast-medium-low);
+    }
+  }
+
   ::spelling-error {
     background-color: transparent;
     color: transparent;
+  }
+
+  @include respond-to('small') {
+    width: 10em;
+    font-size: 0.85em;
+
+    &:focus {
+      width: 12em;
+    }
   }
 }
 
@@ -55,10 +114,95 @@ input[type='search']::-webkit-search-results-decoration {
   display: none;
 }
 
-.search-input:focus {
-  width: 10em;
+// Search page specific styles
+.search-page-header {
+  text-align: center;
+  margin-bottom: 2rem;
+
+  .page-header-title {
+    margin-bottom: 1.5rem;
+    color: var(--color-primary);
+  }
 }
 
+.search-page-form {
+  max-width: 500px;
+  margin: 0 auto 2rem auto;
+
+  .search {
+    width: 100%;
+    max-width: none;
+    height: 3em;
+    padding: 0.7em 1rem;
+
+    .search-input {
+      width: 100%;
+    }
+  }
+}
+
+.search-status {
+  margin-bottom: 1rem;
+
+  .search-result-info {
+    font-size: 1.1rem;
+    color: var(--color-contrast-high);
+    margin-bottom: 0.5rem;
+
+    .search-count {
+      font-weight: 600;
+      color: var(--color-primary);
+    }
+
+    .search-query {
+      font-weight: 600;
+      color: var(--color-contrast-high);
+      font-style: italic;
+    }
+
+    .search-query-label {
+      color: var(--color-contrast-medium);
+    }
+  }
+
+  .search-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    color: var(--color-contrast-medium-high);
+    padding: 1rem;
+    background: var(--color-background-secondary);
+    border-radius: 0.5rem;
+
+    .loading-icon {
+      font-size: 1.2em;
+      animation: pulse 1.5s ease-in-out infinite alternate;
+    }
+
+    .loading-text {
+      font-style: italic;
+    }
+  }
+}
+
+@keyframes pulse {
+  from {
+    opacity: 0.5;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+// Hide original search result string
 #search-result-string {
   display: none;
+
+  &.search-result-info {
+    display: block;
+  }
 }
