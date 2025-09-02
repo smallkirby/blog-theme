@@ -1,15 +1,15 @@
 .page-header {
   background-color: var(--color-contrast-lower);
-  padding: 20px 20px 16px 20px;
-  margin: 0 0 40px 0;
+  padding: 20px 20px 8px 20px;
+  margin: 0 0 20px 0;
   border-radius: 16px;
 
   @include respond-to('medium') {
-    padding: 24px 24px 18px 24px;
+    padding: 26px 26px 2px 26px;
   }
 
   @include respond-to('large') {
-    padding: 26px 26px 20px 26px;
+    padding: 26px 26px 2px 26px;
   }
 }
 
@@ -171,25 +171,45 @@
 .post-category-badge-inline {
   display: inline-flex;
   align-items: center;
-  padding: 0.25rem 0.6rem;
-  background-color: var(--color-primary);
-  color: white;
   text-decoration: none;
   font-size: 0.75rem;
-  font-weight: 500;
-  border-radius: 12px;
-  transition: all 0.2s ease;
+  font-weight: 600;
+  border-radius: 16px;
+  transition: all 0.3s ease;
   white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+  color: white;
+  padding: 0.2rem 0.6rem;
 
-  &:hover {
-    background-color: var(--color-primary);
-    transform: translateY(-1px);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background: linear-gradient(
+      305deg,
+      var(--color-secondary),
+      var(--color-primary)
+    );
   }
 
-  @include respond-to('medium') {
-    padding: 0.3rem 0.7rem;
-    font-size: 0.8rem;
+  &:hover::before {
+    opacity: 1;
+  }
+
+  &:hover {
+    text-decoration: none;
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
   }
 }
 

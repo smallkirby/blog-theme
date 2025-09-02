@@ -2,114 +2,6 @@
 // This file contains all application-wide Sass variables.
 // -----------------------------------------------------------------------------
 
-// gruvbox color scheme: https://github.com/morhetz/gruvbox
-$gv-light-palette: (
-  bg: #fbf1c7,
-  bg0h: #f9f5d7,
-  bg0: #fbf1c7,
-  bg1: #f2e5bc,
-  bg2: #ebdbb2,
-  bg3: #d5c4a1,
-  bg4: #bdae93,
-  gray: #928374,
-  fg0: #282828,
-  fg1: #3c3836,
-  fg2: #504945,
-  fg3: #665c54,
-  fg4: #7c6f64,
-  aqua1: #458588,
-  aqua2: #83a598,
-  orange1: #d65d0e,
-  orange2: #fe8019,
-  purple1: #b16286,
-  purple2: #d3869b,
-  blue1: #076678,
-  blue2: #458588,
-  red1: #cc241d,
-  red2: #fb4934,
-  yellow1: #d79921,
-  yellow2: #fabd2f,
-  green1: #98971a,
-  green2: #b8bb26,
-  // Extended category colors for light mode
-  ctf-primary: #2563eb,
-  // Modern blue for CTF
-  ctf-secondary: #3b82f6,
-  // Lighter blue for CTF
-  game-primary: #16a34a,
-  // Modern green for Game
-  game-secondary: #22c55e,
-  // Lighter green for Game
-  chatter-primary: #9333ea,
-  // Modern purple for Chatter
-  chatter-secondary: #a855f7,
-  // Lighter purple for Chatter
-  // Additional accent colors
-  accent1: #f59e0b,
-  // Warm amber
-  accent2: #ef4444,
-  // Modern red
-  accent3: #06b6d4,
-  // Cyan
-  gradient-start: #4f46e5,
-  // Indigo for gradients
-  gradient-end: #7c3aed,
-  // Violet for gradients
-);
-$gv-dark-palette: (
-  bg: #282828,
-  bg0h: #1d2021,
-  bg0: #282828,
-  bg1: #3c3836,
-  bg2: #504945,
-  bg3: #665c54,
-  bg4: #7c6f64,
-  gray: #928374,
-  fg0: #fbf1c7,
-  fg1: #ebdbb2,
-  fg2: #d5c4a1,
-  fg3: #bdae93,
-  fg4: #a89984,
-  aqua1: #689d6a,
-  aqua2: #8ec07c,
-  orange1: #d65d0e,
-  orange2: #fe8019,
-  purple1: #b16286,
-  purple2: #d3869b,
-  blue1: #458588,
-  blue2: #83a598,
-  red1: #cc241d,
-  red2: #fb4934,
-  yellow1: #d79921,
-  yellow2: #fabd2f,
-  green1: #98971a,
-  green2: #b8bb26,
-  // Extended category colors for dark mode
-  ctf-primary: #60a5fa,
-  // Brighter blue for CTF in dark
-  ctf-secondary: #93c5fd,
-  // Even lighter blue for CTF
-  game-primary: #4ade80,
-  // Brighter green for Game in dark
-  game-secondary: #86efac,
-  // Even lighter green for Game
-  chatter-primary: #c084fc,
-  // Brighter purple for Chatter in dark
-  chatter-secondary: #d8b4fe,
-  // Even lighter purple for Chatter
-  // Additional accent colors for dark mode
-  accent1: #fbbf24,
-  // Brighter amber for dark
-  accent2: #f87171,
-  // Softer red for dark
-  accent3: #22d3ee,
-  // Brighter cyan for dark
-  gradient-start: #6366f1,
-  // Brighter indigo for dark gradients
-  gradient-end: #8b5cf6,
-  // Brighter violet for dark gradients
-);
-
 @function dcolor($color) {
   @return map-get($gv-dark-palette, $color);
 }
@@ -118,43 +10,46 @@ $gv-dark-palette: (
 }
 
 :root {
-  --color-primary: #{dcolor(aqua1)};
-  --color-inline-code: hsl(0, 81%, 70%);
+  --color-primary: #00d4aa;
+  --color-secondary: #6366f1;
+  --color-accent: #f59e0b;
+  --color-inline-code: #e879f9;
 
-  /* color contrasts */
-  --color-bg: #{dcolor(bg0)};
-  --color-contrast-lower: #{dcolor(bg0h)};
-  --color-contrast-low: #{dcolor(bg1)};
-  --color-contrast-medium-low: #{dcolor(bg2)};
-  --color-contrast-medium: #{dcolor(fg1)};
-  --color-contrast-medium-high: #{dcolor(fg2)};
-  --color-contrast-high: #{dcolor(fg0)};
+  --color-bg: #1a1a1a;
+  --color-contrast-lower: #111111;
+  --color-contrast-low: #2d2d2d;
+  --color-contrast-medium-low: #404040;
+  --color-contrast-medium: #a0a0a0;
+  --color-contrast-medium-high: #d0d0d0;
+  --color-contrast-high: #f8f9fa;
   --color-contrast-higher: white;
   --color-title: var(--color-primary);
-  --color-scroll-thumb: #{dcolor(bg1)};
+  --color-scroll-thumb: #404040;
 
   --color-text: var(--color-contrast-high);
-  --color-link: #{dcolor(aqua1)};
-  --color-highlight: #{dcolor(purple1)};
-  --color-bold: #{dcolor(orange1)};
-  --color-link-hover: #{dcolor(aqua1)};
+  --color-link: #06b6d4;
+  --color-highlight: #fbbf24;
+  --color-bold: #f472b6;
+  --color-link-hover: #0891b2;
 
-  /* Category colors for dark mode */
-  --color-ctf-primary: #{dcolor(ctf-primary)};
-  --color-ctf-secondary: #{dcolor(ctf-secondary)};
-  --color-game-primary: #{dcolor(game-primary)};
-  --color-game-secondary: #{dcolor(game-secondary)};
-  --color-chatter-primary: #{dcolor(chatter-primary)};
-  --color-chatter-secondary: #{dcolor(chatter-secondary)};
+  --color-ctf-primary: #06b6d4;
+  --color-ctf-secondary: #67e8f9;
+  --color-game-primary: #10b981;
+  --color-game-secondary: #6ee7b7;
+  --color-chatter-primary: #8b5cf6;
+  --color-chatter-secondary: #c4b5fd;
 
-  /* Accent colors for dark mode */
-  --color-accent1: #{dcolor(accent1)};
-  --color-accent2: #{dcolor(accent2)};
-  --color-accent3: #{dcolor(accent3)};
+  --color-accent1: #f59e0b;
+  --color-accent2: #ef4444;
+  --color-accent3: #06b6d4;
 
-  /* Gradient colors for dark mode */
-  --color-gradient-start: #{dcolor(gradient-start)};
-  --color-gradient-end: #{dcolor(gradient-end)};
+  --color-gradient-start: #6366f1;
+  --color-gradient-end: #8b5cf6;
+
+  --color-alert-info: #3b82f6;
+  --color-alert-warning: #f59e0b;
+  --color-alert-error: #ef4444;
+  --color-alert-success: #10b981;
 
   --font-size-sm: clamp(0.8rem, 0.17vw + 0.76rem, 0.89rem);
   --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
@@ -164,7 +59,8 @@ $gv-dark-palette: (
   --font-size-xxl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
   --font-size-xxxl: clamp(3.05rem, 3.54vw + 2.17rem, 5rem);
 
-  --code-bg: #{dcolor(bg0)};
+  --code-bg: #0f0f0f;
+  --code-border: #2d2d2d;
 
   background-color: var(--color-bg);
   color: var(--color-contrast-high);
