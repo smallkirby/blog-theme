@@ -119,11 +119,11 @@
 }
 
 .see-more {
-  margin-top: 30px;
+  display: block;
+  margin: 30px auto 0;
+  width: fit-content;
 
   @include respond-to('large') {
-    display: block;
     margin: 40px auto 0;
-    width: fit-content;
   }
 }

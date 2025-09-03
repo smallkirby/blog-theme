@@ -16,8 +16,6 @@ feature_image:
 feature_image_alt:
 
 categories:
-tags:
-series:
 
 toc: true
 related: true
