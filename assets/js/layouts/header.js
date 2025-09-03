@@ -2,9 +2,12 @@
 function toggleNav() {
   const mainMenu = document.getElementById('js-menu');
   const navBarToggle = document.getElementById('js-navbar-toggle');
+  const menuOverlay = document.getElementById('js-menu-overlay');
 
   navBarToggle.addEventListener('click', () => {
     mainMenu.classList.toggle('menu--active');
+    menuOverlay.classList.toggle('menu-overlay--active');
+    navBarToggle.classList.toggle('nav-toggle--active');
     removeSubMenus();
   });
 }

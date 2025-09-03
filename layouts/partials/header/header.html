@@ -7,6 +7,7 @@
       </div>
     </a>
 
+    <div class="menu-overlay" id="js-menu-overlay"></div>
     <ul class="menu" id="js-menu">
       <li class="menu-item menu-item--search">
         {{ partial "general/search-box.html" . }}
@@ -33,19 +34,12 @@
         {{ end }}
       {{ end }}
     </ul>
-    <span class="nav-toggle" id="js-navbar-toggle">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        id="Outline"
-        viewBox="0 0 24 24"
-        width="25"
-        height="25"
-        fill="var(--color-contrast-high)"
-      >
-        <rect y="11" width="24" height="2" rx="1" />
-        <rect y="4" width="24" height="2" rx="1" />
-        <rect y="18" width="24" height="2" rx="1" />
-      </svg>
-    </span>
+    <div class="nav-toggle" id="js-navbar-toggle">
+      <div class="hamburger">
+        <span class="hamburger-line hamburger-line--top"></span>
+        <span class="hamburger-line hamburger-line--middle"></span>
+        <span class="hamburger-line hamburger-line--bottom"></span>
+      </div>
+    </div>
   </nav>
 </header>
